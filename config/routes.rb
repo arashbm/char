@@ -2,7 +2,9 @@ Char::Application.routes.draw do
 
   root to: 'dashboards#show'
 
-  resources :posts
+  resources :posts do
+    resources :revisions, only: [:index, :show]
+  end
 
   resource :dashboard, only: [:show]
 

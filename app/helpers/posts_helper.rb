@@ -3,7 +3,7 @@ module PostsHelper
   def post_footer(post)
     lnks =[]
     lnks << link_to(t("helpers.links.edit_html"), edit_post_path(post)) if current_user.editable_posts.include? post
-    lnks << link_to(t("helpers.links.revisions_html", count: 0 ), '{post_revisions_path(post)}')
+    lnks << link_to(t("helpers.links.revisions_html", count: post.versions.count ), post_revisions_path(post))
     lnks << link_to(t("helpers.links.reviews_html", count: 0 ), '{post_show_reviews_path(post)}')
     content_tag :div, lnks.join(' | ').html_safe
   end

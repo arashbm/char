@@ -45,3 +45,5 @@ gem "differ", "~> 0.1.2"
 gem "airbrake", "~> 3.1.8"
 
 gem 'clearance', '1.0.0.rc6'
+
+gem "paper_trail", github: 'airblade/paper_trail', branch: 'rails4'
