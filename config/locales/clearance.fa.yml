@@ -1,0 +1,49 @@
+fa:
+  clearance_mailer:
+    change_password:
+      opening:
+        'Someone, hopefully you, requested we send you a link to change your
+         password:'
+      closing:
+        "If you didn't request this, ignore this email. Your password has not
+         been changed."
+  flashes:
+    failure_when_forbidden:
+      'Please double check the URL or try submitting the form again.'
+    failure_after_update: "رمز عبور نمی‌تواند خالی باشد."
+    failure_after_create:
+      'ایمیل یا رمز عبور غلط است. آیا می‌خواهید یک حساب جدید ایجاد کنید؟
+       <a href="%{sign_up_path}">حساب جدید ایجاد کنید</a>.'
+  helpers:
+    submit:
+      password:
+        submit: 'بازنشانی رمز عبور'
+      password_reset:
+        submit: 'به خاطر بسپار'
+      session:
+        submit: 'ورود'
+      user:
+        create: 'ایجاد حساب کاربری'
+  passwords:
+    create:
+      description:
+        'You will receive an email within the next few minutes.
+         It contains instructions for changing your password.'
+    edit:
+      description:
+        'Your password has been reset. Choose a new password below.'
+      title: 'تغییر رمز عبور'
+    new:
+      description:
+        'To be emailed a link to reset your password, please enter your email
+         address.'
+      title: 'بازنشانی رمز عبور'
+  sessions:
+    new:
+      forgot_password: 'رمز عبورتان را فراموش کرده‌اید؟'
+      sign_up: 'ایجاد حساب کاربری'
+      title: 'ورود'
+  users:
+    new:
+      sign_in: 'ورود'
+      sign_up: 'ایجاد حساب کاربری'

@@ -1,0 +1,12 @@
+<%- model_class = User -%>
+<div class="page-header">
+  <h1><%= @user.name %> <%= role_label(@user)%></h1>
+</div>
+
+<p><strong><%= model_class.human_attribute_name(:email) %>:</strong> <%= @user.email %></p>
+
+<% if current_user.editable_users.include? @user %>
+  <div class="form-actions">
+    <%= link_to t("helpers.links.edit_html"), edit_user_path(@user), class: 'btn'%>
+  </div>
+<% end %>

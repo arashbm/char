@@ -1,0 +1,18 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="/"><%= t :char %></a>
+      <div class="container nav-collapse">
+        <ul class='nav pull-left'>
+          <li><%= link_to t('.sign_up_html'), new_user_path %></li>
+          <li><%= link_to t('.sign_in_html'), new_session_path %></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>

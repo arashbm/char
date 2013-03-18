@@ -1,0 +1,20 @@
+fa:
+  helpers:
+    read_on: '(بخوانید)'
+    actions: "ژانگولر"
+
+    links:
+      back: "برگرد"
+      cancel: "بی‌خیال"
+      confirm: "مطمئنی؟"
+      destroy: "پاک کن"
+      destroy_html: "<i class='icon-trash'></i> پاک کن"
+      new: "جدید"
+      new_html: "<i class='icon-plus'></i> جدید"
+      edit: "ویرایش"
+      edit_html: "<i class='icon-pencil'></i> ویرایش"
+      revisions_html: "<i class='icon-time'></i> بازنگری‌ها <span class='badge'>%{count}</span>"
+      reviews_html: "<i class='icon-legal'></i> نقد‌ها <span class='badge'>%{count}</span>"
+    titles:
+      edit: "ویرایش %{model}"
+      new: "ایجاد %{model}"

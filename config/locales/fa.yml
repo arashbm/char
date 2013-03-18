@@ -1,0 +1,44 @@
+fa:
+  char: چارپایه
+
+  posts:
+    index:
+      title: همه‌ی مطالب  
+  users:
+    index:
+      title: همه‌ی کاربران
+
+  layouts:
+    navbar:
+      sign_in_html: <i class="icon-lock"></i> ورود
+      sign_up_html: <i class="icon-book"></i> ثبت‌نام
+    user_navbar:
+      dashboard_html: <i class='icon-dashboard'></i> پیش‌خوان
+      sign_out_html: <i class='icon-off'></i> خروج
+      all_posts_html: <i class='icon-list'></i> همه‌ی مطالب
+      post_new_html:  <i class='icon-plus'></i> مطلب جدید 
+      users_html:  <i class='icon-group'></i> کاربران
+      profile_html:  <i class='icon-user'></i> نمایه
+      prefrences_html:  <i class='icon-cog'></i> تنظیمات
+      support_html:  <i class='icon-envelope'></i> پشتیبانی 
+      hello: سلام %{user}!
+
+  activerecord:
+    models:
+      user: کاربر
+      post: مطلب
+    attributes:
+      user:
+        id: شناسه
+        name: نام
+        email: ایمیل
+        password: رمز عبور
+        role: عنوان
+        roles:
+          editorial: تحریریه
+      post:
+        title: عنوان
+        body: بدنه
+      session:
+        email: ایمیل
+        password: رمز عبور

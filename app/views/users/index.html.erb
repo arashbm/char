@@ -1,0 +1,31 @@
+<%- model_class = User -%>
+<div class="page-header">
+  <h1><%=t '.title' %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to user.id, user_path(user) %></td>
+        <td><%= user.name %> <%= role_label(user)%></td>
+        <td><%= user.email %></td>
+        <td>
+	  <%= link_to t("layouts.user_navbar.profile_html"), user_path(user), class: 'btn btn-mini' %>
+          <% if current_user.editable_users.include? user  %>
+            <%= link_to t("helpers.links.edit_html"), edit_user_path(user), class: 'btn btn-mini' %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t("helpers.links.new_html"), new_user_path, class: 'btn btn-primary' %>
