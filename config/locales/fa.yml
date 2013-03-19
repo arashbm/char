@@ -8,6 +8,16 @@ fa:
     index:
       title: همه‌ی کاربران
 
+  revisions:
+    index:
+      title_html: "تغییرات مطلب «%{title}»"
+    show:
+      title_html: "تغییرات مطلب «%{title}» <small>توسط %{originator}</small>"
+      sentence: "%{originator} در %{created_at} این مطلب را %{event} کرد."
+      unknown_originator: 'کسی'
+      previous_html: <i class='icon-arrow-right'></i> قبلی
+      next_html: بعدی <i class='icon-arrow-left'></i>
+
   layouts:
     navbar:
       sign_in_html: <i class="icon-lock"></i> ورود
@@ -42,3 +52,11 @@ fa:
       session:
         email: ایمیل
         password: رمز عبور
+      version:
+        created_at: زمان تغییر
+        event: نوع تغییر
+        originator: توسط
+        events:
+          create: ایجاد
+          update: به روز رسانی
+          destroy: حذف

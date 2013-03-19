@@ -11,9 +11,8 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-// require jquery.turbolinks
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
-// disabling turbolinks for now
-// require turbolinks
+//= require turbolinks

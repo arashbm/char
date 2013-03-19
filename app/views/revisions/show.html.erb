@@ -1,16 +1,12 @@
 <div class="page-header">
-  <h1><%= t '.title' %></h1>
+  <h1><%= t '.title_html', title: @post.title , originator: originator_name(@revision) %></h1>
 </div>
+<div class='alert alert-block alert-info'>
+  <%= content_tag :p, t('.sentence', originator: originator_name(@revision),
+          event: event_name(@revision),
+          created_at: l(@revision.created_at, format: :short))%>
+  <%= previous_next_btn(@revision) %>
+</div>
+<h2><%= diff(@revision, :title) %></h2>
 
-<p><strong><%= t '.originator' %>:</strong> <%= @revision.originator ? User.find(@revision.originator).name : '?' %></p>
-<p><strong><%= t '.event' %>:</strong> <%= @revision.event %></p>
-<p><strong><%= t '.created_at' %></strong> <%= l @revision.created_at %></p>
-<% if @revision.changeset %>
-  <% if @revision.changeset.keys.include? 'title' %>
-    <%= show_diff @revision.changeset['title'][0], @revision.changeset['title'][1] %>
-  <% end %>
-
-  <% if @revision.changeset.keys.include? 'body' %>
-    <%= show_diff @revision.changeset['body'][0], @revision.changeset['body'][1] %>
-  <% end %>
-<% end %>
+<%= content_tag :div, diff(@revision, :body), class: 'well' %>
