@@ -1,13 +1,52 @@
 <%- model_class = Post -%>
-<div class="page-header">
-  <h1><%= @post.title %> <small><%= @post.user.try(:name) %></small></h1>
-</div>
+<div class='row span6 offset3' >
+  <div class="page-header">
+    <h1><%= @post.title %> <small><%= @post.user.try(:name) %></small></h1>
+  </div>
 
-<%= content_tag :div, @post.body, data: { markdown: @post.body } %>
+  <%= content_tag :div, @post.body, data: { markdown: @post.body } %>
 
-<div class="form-actions">
-  <%= link_to t("helpers.links.edit_html"),
+  <div class="form-actions">
+    <%= link_to t("helpers.links.edit_html"),
               edit_post_path(@post), :class => 'btn' %>
-  <%= link_to t("helpers.links.destroy_html"), post_path(@post), method: 'delete',
+    <%= link_to t("helpers.links.destroy_html"), post_path(@post), method: 'delete',
               confirm: t("helpers.links.confirm"), class: 'btn btn-danger' %>
+  </div>
+</div>
+<div class="row span6 offset3" >
+  <ul class="nav nav-tabs" id="under-post-tab">
+    <li class="active"><%=link_to t('.reviews_html', count: @post.reviews.count), post_reviews_anchor(@post) %></li>
+    <li><%= link_to t('.discussions_html', count: 0), post_discussions_anchor(@post) %></li>
+    <li><a href="#messages">پیام‌ها</a></li>
+    <li><a href="#settings">تنظیمات</a></li>
+  </ul>
+  <div class="tab-content" >
+    <div class='tab-pane active' id='reviews' >
+      <%= content_tag_for :article, @post.reviews.order('created_at DESC') do |r| %>
+        <% unless r.content.empty? %>
+          <h4><%= Review.human_attribute_name :content %></h4>
+          <%= content_tag :div, r.content, data: { markdown: r.content }, class: 'review review_content' %>
+        <% end %>
+        <% unless r.form.empty? %>
+          <h4><%= Review.human_attribute_name :form %></h4>
+          <%= content_tag :div, r.form, data: { markdown: r.form }, class: 'review review_form' unless r.form.empty? %>
+        <% end %>
+
+        <div class='review-footer'> <i class='icon-user'></i> <%= link_to r.user.name, r.user %> | <%= content_tag :abbr, "#{time_ago_in_words r.created_at} پیش ", title: l(r.created_at, format: :short) %></div>
+        <hr />
+      <% end %>
+
+      <hr />
+
+      <% r = @post.reviews.find_or_initialize_by(user: current_user) %>
+      <%= simple_form_for [@post, r] do |f| %>
+        <%= f.input :content, input_html: { rows: 5, class: 'span6' } %>
+        <%= f.input :form, input_html: { rows: 5, class: 'span6' } %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+    <div class="tab-pane" id="discussions">...</div>
+    <div class="tab-pane" id="messages">...</div>
+    <div class="tab-pane" id="settings">...</div>
+  </div>
 </div>
