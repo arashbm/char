@@ -15,8 +15,8 @@
 </div>
 <div class="row span6 offset3" >
   <ul class="nav nav-tabs" id="under-post-tab">
-    <li class="active"><%=link_to t('.reviews_html', count: @post.reviews.count), post_reviews_anchor(@post) %></li>
-    <li><%= link_to t('.discussions_html', count: 0), post_discussions_anchor(@post) %></li>
+    <li class="active"><%=link_to t('.reviews_html', count: @post.reviews.count), '#reviews'  %></li>
+    <li><%= link_to t('.discussions_html', count: 0), '#discussions' %></li>
     <li><a href="#messages">پیام‌ها</a></li>
     <li><a href="#settings">تنظیمات</a></li>
   </ul>
