@@ -1,9 +1,15 @@
 fa:
   char: چارپایه
 
+  helpers:
+    errors:
+      more_than_one_review_per_post: برای هر مطلب یک نقد بیشتر نمی‌توانید بنویسید. همان نقد قبلی را ویرایش کنید. اگر می‌توانید برای بحث بیشتر از قابلیت بحث استفاده کنید.
   posts:
     index:
-      title: همه‌ی مطالب  
+      title: همه‌ی مطالب
+    show:
+      reviews_html: نقد‌ها <span class='badge'>%{count}</span>
+      discussions_html: بحث <span class='badge'>%{count}</span>
   users:
     index:
       title: همه‌ی کاربران
@@ -37,6 +43,8 @@ fa:
     models:
       user: کاربر
       post: مطلب
+      review: نقد
+      discussion: بحث
     attributes:
       user:
         id: شناسه
@@ -46,6 +54,9 @@ fa:
         role: عنوان
         roles:
           editorial: تحریریه
+      review:
+        form: قالب
+        content: محتوا
       post:
         title: عنوان
         body: بدنه
