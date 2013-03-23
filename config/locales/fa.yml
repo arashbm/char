@@ -24,6 +24,10 @@ fa:
       previous_html: <i class='icon-arrow-right'></i> قبلی
       next_html: بعدی <i class='icon-arrow-left'></i>
 
+  blueprints:
+    discussion:
+      sending: در حال ارسال
+
   layouts:
     navbar:
       sign_in_html: <i class="icon-lock"></i> ورود

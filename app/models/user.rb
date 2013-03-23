@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   include Clearance::User
   has_many :posts
+  has_many :discussions
+  has_many :blueprint, foreign_key: :creator_id
 
   validates :name, presence: true
 
