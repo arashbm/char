@@ -4,39 +4,36 @@ class BlueprintsController < ApplicationController
   before_action :get_blueprints
 
   def index
-    respond_with(@blueprints)
+    respond_with(@visible_blueprints)
   end
 
   def show
-    @blueprint = @blueprints.find(params[:id])
+    @blueprint = @visible_blueprints.find(params[:id])
     respond_with(@blueprint)
   end
 
   def new
-    @blueprint = @blueprints.new
+    @blueprint = current_user.blueprints.new
     respond_with(@blueprint)
   end
 
   def edit
-    @blueprint = @blueprints.find(params[:id])
+    @blueprint = @editable_blueprints.find(params[:id])
   end
 
   def create
-    @blueprint = @blueprints.new(blueprint_params) do |i|
-      i.creator = current_user
-    end
-    @blueprint.save
+    @blueprint = current_user.blueprints.create(blueprint_params)
     respond_with(@blueprint)
   end
 
   def update
-    @blueprint = @blueprints.find(params[:id])
-    @blueprint.update(params[:blueprint])
+    @blueprint = @editable_blueprints.find(params[:id])
+    @blueprint.update(blueprint_params)
     respond_with(@blueprint)
   end
 
   def destroy
-    @blueprint = @blueprints.find(params[:id])
+    @blueprint = current_user.blueprints.find(params[:id])
     @blueprint.destroy
     respond_with(@blueprint)
   end
@@ -48,6 +45,7 @@ class BlueprintsController < ApplicationController
   end
 
   def get_blueprints
-    @blueprints = Blueprint.all
+    @visible_blueprints = current_user.visible_blueprints
+    @editable_blueprints = current_user.visible_blueprints
   end
 end

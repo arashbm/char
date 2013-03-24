@@ -11,8 +11,10 @@
         <ul class="nav">
           <li><%= link_to t('.dashboard_html'), dashboard_path %></li>
           <li><%= link_to t('.all_posts_html'), posts_path %></li>
-          <li><%= link_to t('.post_new_html'), new_post_path %></li>
+          <li><%= link_to t('.blueprints_html'), blueprints_path %></li>
           <li><%= link_to t('.users_html'), users_path %></li>
+          <li class='divider-vertical'></li>
+          <li><%= link_to t('.post_new_html'), new_post_path %></li>
         </ul>
         <ul class='nav pull-left'>
           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= t '.hello', user: current_user.first_name %> <b class="caret"></b></a>

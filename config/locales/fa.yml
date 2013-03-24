@@ -25,6 +25,8 @@ fa:
       next_html: بعدی <i class='icon-arrow-left'></i>
 
   blueprints:
+    index:
+      title: فهرست برنامه‌ها
     discussion:
       sending: در حال ارسال
 
@@ -41,6 +43,7 @@ fa:
       profile_html:  <i class='icon-user'></i> نمایه
       prefrences_html:  <i class='icon-cog'></i> تنظیمات
       support_html:  <i class='icon-envelope'></i> پشتیبانی 
+      blueprints_html: <i class='icon-calendar'></i> برنامه‌ها
       hello: سلام %{user}!
 
   activerecord:
@@ -49,6 +52,7 @@ fa:
       post: مطلب
       review: نقد
       discussion: بحث
+      blueprint: برنامه
     attributes:
       user:
         id: شناسه
@@ -75,3 +79,12 @@ fa:
           create: ایجاد
           update: به روز رسانی
           destroy: حذف
+      blueprint:
+        status: وضعیت
+        title: عنوان
+        description: توضیحات
+        creator: ایجاد کننده
+        statuses:
+          draft: پیش‌نویس
+          approved: تایید شده
+          dipproved: کنسل شده
