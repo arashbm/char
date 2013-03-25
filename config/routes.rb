@@ -1,7 +1,12 @@
 Char::Application.routes.draw do
-  devise_for :users
 
   root to: 'dashboards#show'
+
+  devise_for :users
+
+  resources :blueprints do
+    resources :discussions
+  end
 
   resources :posts do
     resources :revisions, only: [:index, :show]

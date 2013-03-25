@@ -14,8 +14,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= link_to user.id, user_path(user) %></td>
-        <td><%= user.name %> <%= role_label(user)%></td>
+        <td><%= link_to user.name, user_path(user) %>  <%= role_label(user)%></td>
         <td><%= user.email %></td>
         <td>
 	  <%= link_to t("layouts.user_navbar.profile_html"), user_path(user), class: 'btn btn-mini' %>
@@ -27,5 +26,3 @@
     <% end %>
   </tbody>
 </table>
-
-<%= link_to t("helpers.links.new_html"), new_user_path, class: 'btn btn-primary' %>

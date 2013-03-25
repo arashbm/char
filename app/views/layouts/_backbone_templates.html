@@ -1,0 +1,19 @@
+<script type="text/template" id="blueprint-template">
+  <h1>[[= title ]] <small>«[[= creator_id ]]»</small></h1>
+  <span class='label'>[[= status ]]</span>
+  <div>
+    [[= description ]]
+  </div>
+  <div class='discussions'></div>
+</script>
+
+<script type="text/template" id="discussions-template">
+  <ul class='discussions-list'></ul>
+</script>
+
+<script type="text/template" id="discussion-template">
+  <strong>[[= user_id ]]:</strong>
+  <div>
+    [[= body ]]
+  </div>
+</script>

@@ -9,9 +9,20 @@ class UserTest < ActiveSupport::TestCase
     @post1 = @user1.posts.create!(title: 'should_see', body: 'should_see')
     @post2 = @user2.posts.create!(title: 'shouldnt_see', body: 'shouldnt_see' )
     @post3 = @user3.posts.create!(title: 'shouldnt_see', body: 'shouldnt_see')
+    @blue1 = @user1.blueprints.create!(title: 'should_see', description: 'should_see', status: 'draft')
+    @blue2 = @user2.blueprints.create!(title: 'shouldnt_see', description: 'shouldnt_see', status: 'draft')
+    @blue3 = @user3.blueprints.create!(title: 'shouldnt_see', description: 'shouldnt_see', status: 'draft')
   end
 
   # -- normal non-editorial:
+  test "non-editorial user can only see his own blueprints" do
+    assert_equal 1, @user1.visible_blueprints.count
+  end
+
+  test "non-editorial user can only edit his own blueprints" do
+    assert_equal 1, @user1.editable_blueprints.count
+  end
+
   test "non-editorial user can only see his own posts" do
     assert_equal 1, @user1.visible_posts.count
   end
@@ -30,6 +41,14 @@ class UserTest < ActiveSupport::TestCase
 
 
   # -- editorial:
+  test "editorial user can see all blueprints" do
+    assert_equal 3, @user3.visible_blueprints.count
+  end
+
+  test "editorial user can edit all blueprints" do
+    assert_equal 3, @user3.editable_blueprints.count
+  end
+
   test "editorial user should see all posts" do
     assert_equal 3, @user3.visible_posts.count
   end

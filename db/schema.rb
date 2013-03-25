@@ -13,6 +13,26 @@
 
 ActiveRecord::Schema.define(version: 20130324094037) do
 
+  create_table "blueprints", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "creator_id"
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "discussions", force: true do |t|
+    t.integer  "blueprint_id"
+    t.integer  "user_id"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "discussions", ["blueprint_id"], name: "index_discussions_on_blueprint_id"
+  add_index "discussions", ["user_id"], name: "index_discussions_on_user_id"
+
   create_table "posts", force: true do |t|
     t.string   "title"
     t.text     "body"

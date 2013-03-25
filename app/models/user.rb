@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :posts
+  has_many :discussions
+  has_many :blueprints, foreign_key: :creator_id
 
   # validates :name, presence: true
 
@@ -43,6 +45,23 @@ class User < ActiveRecord::Base
       Post.all
     else
       posts
+    end
+  end
+
+
+  def editable_blueprints
+    if member_of_editorial?
+      Blueprint.all
+    else
+      blueprints
+    end
+  end
+
+  def visible_blueprints
+    if member_of_editorial?
+      Blueprint.all
+    else
+      blueprints
     end
   end
 
