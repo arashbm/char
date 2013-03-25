@@ -1,5 +1,5 @@
 Char::Application.routes.draw do
-
+  devise_for :users
 
   root to: 'dashboards#show'
 
@@ -10,10 +10,5 @@ Char::Application.routes.draw do
 
   resource :dashboard, only: [:show]
 
-  resources :users, controller: 'users',
-    only: [:show, :edit, :update, :index, :create, :new] do
-    resource :password,
-        :controller => 'clearance/passwords',
-        :only => [:create, :edit, :update]
-    end
+  resources :users, only: [:edit, :update, :show, :index]
 end

@@ -1,7 +1,6 @@
 require "application_responder"
 
 class ApplicationController < ActionController::Base
-  include Clearance::Controller
   self.responder = ApplicationResponder
   respond_to :html, :json
 
@@ -28,4 +27,8 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :post_reviews_anchor, :post_review_anchor, :post_discussions_anchor, :post_discussion_anchor
+
+  def authorize
+    authenticate_user!
+  end
 end

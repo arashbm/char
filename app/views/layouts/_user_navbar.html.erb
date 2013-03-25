@@ -21,7 +21,7 @@
               <li><%= link_to t('.prefrences_html'), edit_user_path(current_user)%></li>
               <li><%= mail_to 'arashbm@gmail.com', t('.support_html'), subject: 'چارپایه ترکیده' %></li>
               <li class="divider"></li>
-              <li><%= link_to t('.sign_out_html'), session_path, method: :delete %></li>
+              <li><%= link_to t('.sign_out_html'), destroy_user_session_path, method: :delete %></li>
             </ul>
           </li>
           

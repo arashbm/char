@@ -1,8 +1,13 @@
 class User < ActiveRecord::Base
-  include Clearance::User
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :confirmable,
+  # :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
   has_many :posts
 
-  validates :name, presence: true
+  # validates :name, presence: true
 
   def admin?
     # make it configurable!
@@ -42,6 +47,6 @@ class User < ActiveRecord::Base
   end
 
   def first_name
-    name.split.first
+    (name || 'کاربر').split.first
   end
 end

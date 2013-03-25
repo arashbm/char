@@ -1,10 +1,5 @@
-class UsersController < Clearance::UsersController
+class UsersController < ApplicationController
   before_action :authorize, only: [:show, :edit, :update, :index]
-
-  def new
-    @user = User.new
-    respond_with @user
-  end
 
   def show
     @user = current_user.visible_users.find(params[:id])
@@ -28,11 +23,8 @@ class UsersController < Clearance::UsersController
 
   private
 
-  def user_from_params
-    Clearance.configuration.user_model.new(user_params)
-  end
-
   def user_params
+    params[:user][:password] = nil if params[:user] && params[:user][:password] == ''
     if current_user && current_user.admin?
       params.fetch(:user).permit(:email, :name, :password, :role)
     else
