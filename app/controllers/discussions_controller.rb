@@ -12,7 +12,6 @@ class DiscussionsController < ApplicationController
   end
 
   def create
-    sleep 3
     @discussion = @discussions.create(discussion_params) do |a|
       a.user = current_user
     end
