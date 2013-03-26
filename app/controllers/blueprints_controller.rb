@@ -46,6 +46,6 @@ class BlueprintsController < ApplicationController
 
   def get_blueprints
     @visible_blueprints = current_user.visible_blueprints
-    @editable_blueprints = current_user.visible_blueprints
+    @editable_blueprints = current_user.editable_blueprints
   end
 end

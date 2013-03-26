@@ -10,3 +10,4 @@ jQuery ->
   if res = window.location.hash.match(/(review|discussion)_(\d+)/i)
     $("#under-post-tab a[href='##{res[1]}s']").tab 'show'
 
+  window.currentUser = $('#container').data('currentUser')

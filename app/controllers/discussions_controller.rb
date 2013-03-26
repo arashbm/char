@@ -6,25 +6,30 @@ class DiscussionsController < ApplicationController
   before_action :get_blueprint
 
   def index
-    respond_with @blueprint, @discussions
+    respond_to do |f|
+      f.json { render json: @discussions.to_json(include: { user: { only: [:name, :id] }})}
+    end
   end
 
   def create
+    sleep 3
     @discussion = @discussions.create(discussion_params) do |a|
       a.user = current_user
     end
-    respond_with @blueprint, @discussion, location: blueprint_path(@blueprint)
+    respond_with @blueprint, @discussion do |f|
+      f.json { render json: @discussion.to_json(include: { user: { only: [:name, :id] }}) }
+    end
   end
 
   def show
     @discussion = @discussions.find(params[:id])
-    respond_with @blueprint, @discussion 
+    respond_with @blueprint, @discussion
   end
 
   private
 
   def get_blueprint
-    @blueprint = Blueprint.find(params[:blueprint_id])
+    @blueprint = current_user.visible_blueprints.find(params[:blueprint_id])
     @discussions = @blueprint.discussions
   end
 

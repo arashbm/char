@@ -1,11 +1,27 @@
-<%= content_tag_for :article, blueprint.discussions  do |d| %>
-  <%= content_tag :div, d.body %>
-  <div class='discussion-footer'> <i class='icon-user'></i> <%= link_to d.user.name, d.user %> | <%= content_tag :abbr, "#{time_ago_in_words d.created_at} پیش ", title: l(d.created_at, format: :short) %></div>
-  <hr />
-<% end %>
-<div>
-  <%= simple_form_for [blueprint, blueprint.discussions.new], remote: true, html: {"data-type" => :json} do |f| %>
-    <%= f.input :body %>
-    <%= f.button :submit, data: {'loading-text' => t('.sending') } %>
-  <% end %> 
+<div ng-app='char'>
+  <%= content_tag :div, id: 'discussions-list',
+        'ng-controller' => 'DiscussionListCtrl',
+        data: { discussions: @blueprint.discussions.to_json(include: { user: {only: [:id , :name]} }) } do %>
+    <h2><%= t '.discussions', count: '5' %></h2>
+    <div>
+      <div ng-repeat="discussion in discussions">
+        {{discussion.body}}
+        <div class='discussion-footer'>
+          <span ng-show='discussion.temp'>
+            <i class='icon-spinner icon-spin'></i> <%= t '.working' %>|
+          </span>
+          <i class='icon-user'></i> <a href='/users/{{discussion.user.id}}'>{{discussion.user.name}}</a> |
+          <time datetime='{{discussion.created_at}}'>{{discussion.created_at | timeAgo | persianNum }}</time>
+        </div>
+        <hr />
+      </div> <%# ng-repeat %>
+    </div>
+    <div>
+      <%= simple_form_for [@blueprint, @blueprint.discussions.new], html: { 'ng-submit' => "addDiscussion()" }, url: '' do |f| %>
+        <%= f.input :body, input_html: {class: 'span4', rows: '4', 'ng-model' => 'body' },
+          wrapper_html: { class: '{{wrapperClass.body}}' }, hint: '{{errors.body[0]}}'%>
+        <%= f.button :submit, id: 'discussion-submit' %>
+      <% end %>
+    </div>
+  <% end %>
 </div>

@@ -24,21 +24,19 @@
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
-    <%= render 'layouts/backbone_templates' %>
-
   </head>
 
   <body>
 
     <header>
-      <%= render (signed_in? ? 'layouts/user_navbar' : 'layouts/navbar') %>
+      <%= render (user_signed_in? ? 'layouts/user_navbar' : 'layouts/navbar') %>
     </header>
 
-    <div class="container">
+    <div id="container" class="container" data-current-user='<%= (current_user || {}).to_json %>'>
       <%= bootstrap_flash %>
-      <div class="row">
+      <%= content_tag :div, class: 'row' do %>
         <%= yield %>
-      </div>
+      <% end %>
 
       <footer>
         <hr />

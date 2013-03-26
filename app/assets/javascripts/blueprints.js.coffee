@@ -1,36 +1,56 @@
-jQuery ->
+window.DiscussionListCtrl = ($scope, $http, $timeout) ->
 
-  $("#new_discussion input.btn[type=submit]").click ->
-    $(this).button('loading')
+  $scope.reload = ->
+    $http.get("/blueprints/#{$scope.blueprint_id}/discussions.json").success (data, status) ->
+      $scope.discussions = data
+
+  $scope.autoReload = ->
+    $scope.reload()
+    $timeout($scope.autoReload, 10000)
+
+  # bootstrap discussions from DOM
+  $scope.discussions = $('#discussions-list').data('discussions')
+
+  # setup auto reload every 30 secs
+  $scope.autoReload()
+  
+  $scope.blueprint_id = parseInt window.location.toString().match(/blueprints\/(\d+)/)[1]
 
 
-  $("#new_discussion").on "ajax:success", (e, data, status, xhr) ->
-    console.log xhr.responseText
-    response = JSON.parse(xhr.responseText)
-    $("#new_discussion .control-group").removeClass('error')
-    $("#new_discussion .control-group .controls span.help-inline").remove()
+  $scope.addDiscussion = ->
+    # create a json
+    date = new Date
+    newDis =
+      authenticity_token: $('input[name="authenticity_token"]')[0].value
+      discussion:
+        body: $scope.body
+        user_id: window.currentUser.id
+        user:
+          id: window.currentUser.id
+          name: window.currentUser.name
+        created_at: date.toISOString()
+        temp: 1
+    $scope.discussions.push newDis['discussion']
 
-    # reseting form
-    $("#new_discussion")[0].reset()
+    # reset all errors
+    $scope.wrapperClass = { body: '' }
+    $scope.errors = { base: '', body: '' }
 
-    # reload
-    Turbolinks.visit(window.location)
+    # reset the form
+    $scope.body = ''
 
-  $("#new_discussion").on "ajax:error", (e, xhr, status, error) ->
-    console.log xhr.responseText
-    response = JSON.parse(xhr.responseText)
+    # send the request
+    promis = $http.post("/blueprints/#{$scope.blueprint_id}/discussions.json", newDis)
+    promis.success (data) ->
+      # reload to get the latest
+      $scope.refresh()
+    promis.error (data, status) ->
+      console.log 'ERRRRRRRRRRA', status, data
 
-    for attribute, errors  of response.errors
+      # add error to proper fields
+      $scope.wrapperClass = { body: 'error' }
+      $scope.errors = data['errors'] if status == 422
 
-      # adding error class
-      $("#new_discussion .control-group.discussion_#{attribute}").addClass('error')
-
-      # appending error text
-      if $("#new_discussion .control-group.discussion_#{attribute} .controls span.help-inline").length > 0
-        $("#new_discussion .control-group.discussion_#{attribute} .controls span.help-inline").html(errors[0])
-      else
-        $(".control-group.discussion_#{attribute} .controls").append("<span class=help-inline>#{errors[0]}</span>")
-
-      # reseting button
-      $("#new_discussion input.btn[type=submit]").button('reset')
-
+      # pop it back to form
+      d = $scope.discussions.pop()
+      $scope.body = d.body

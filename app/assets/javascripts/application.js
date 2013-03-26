@@ -13,8 +13,9 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require moment
 //= require twitter/bootstrap
-//= require view
-//= require ejs
+//= require angular
+//= require angular-resource
 //= require_tree .
 //= require turbolinks

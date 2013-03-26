@@ -28,7 +28,7 @@ fa:
     index:
       title: فهرست برنامه‌ها
     discussion:
-      sending: در حال ارسال
+      working: در حال ارسال
 
   layouts:
     navbar:
