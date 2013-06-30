@@ -2,11 +2,11 @@ fa:
   flash:
     actions:
       create:
-        notice: '%{resource_name} was successfully created.'
+        notice: '%{resource_name} با موفقیت ایجاد شد.'
         # alert: '%{resource_name} could not be created.'
       update:
-        notice: '%{resource_name} was successfully updated.'
+        notice: '%{resource_name} با موفقیت به روز شد.'
         # alert: '%{resource_name} could not be updated.'
       destroy:
-        notice: '%{resource_name} was successfully destroyed.'
+        notice: '%{resource_name} با موفقیت حذف شد.'
         alert: '%{resource_name} could not be destroyed.'

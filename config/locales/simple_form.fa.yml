@@ -15,16 +15,7 @@ fa:
       user:
         edit:
           password: "[رمز عبور فعلی شما]"
-    # labels:
-    #   defaults:
-    #     password: 'Password'
-    #   user:
-    #     new:
-    #       email: 'E-mail to sign in.'
-    #     edit:
-    #       email: 'E-mail.'
-    # hints:
-    #   defaults:
-    #     username: 'User name to sign in.'
-    #     password: 'No special characters, please.'
+    hints:
+      user:
+        name: 'لطفا از نام واقعی‌تان استفاده کنید!'
 
