@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 20130324094037) do
     t.datetime "updated_at"
   end
 
-  add_index "discussions", ["blueprint_id"], name: "index_discussions_on_blueprint_id"
-  add_index "discussions", ["user_id"], name: "index_discussions_on_user_id"
+  add_index "discussions", ["blueprint_id"], name: "index_discussions_on_blueprint_id", using: :btree
+  add_index "discussions", ["user_id"], name: "index_discussions_on_user_id", using: :btree
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 20130324094037) do
     t.datetime "updated_at"
   end
 
-  add_index "reviews", ["post_id"], name: "index_reviews_on_post_id"
-  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
+  add_index "reviews", ["post_id"], name: "index_reviews_on_post_id", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -70,8 +70,8 @@ ActiveRecord::Schema.define(version: 20130324094037) do
     t.string   "last_sign_in_ip"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "versions", force: true do |t|
     t.string   "item_type",      null: false
@@ -83,6 +83,6 @@ ActiveRecord::Schema.define(version: 20130324094037) do
     t.text     "object_changes"
   end
 
-  add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
+  add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id", using: :btree
 
 end
