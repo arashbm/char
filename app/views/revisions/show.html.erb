@@ -1,8 +1,8 @@
 <div class="page-header">
-  <h1><%= t '.title_html', title: @post.title , originator: originator_name(@revision) %></h1>
+  <h1><%= t '.title_html', title: @post.title , terminator: terminator_name(@revision) %></h1>
 </div>
 <div class='alert alert-block alert-info'>
-  <%= content_tag :p, t('.sentence', originator: originator_name(@revision),
+  <%= content_tag :p, t('.sentence', terminator: terminator_name(@revision),
           event: event_name(@revision),
           created_at: l(@revision.created_at, format: :short))%>
   <%= previous_next_btn(@revision) %>
