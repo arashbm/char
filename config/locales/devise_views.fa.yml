@@ -1,0 +1,6 @@
+fa:
+  devise:
+    sign_in: ورود
+    sign_up: ثبت نام
+    forgot_password: رمز عبورتان را فراموش کرده‌اید؟
+    reset_password: بازنشانی رمز عبور

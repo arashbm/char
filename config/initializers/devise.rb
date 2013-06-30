@@ -32,11 +32,6 @@ Devise.setup do |config|
   # The same considerations mentioned for authentication_keys also apply to request_keys.
   # config.request_keys = []
 
-  # Configure custom permitted parameters for Devise controllers. If you use your own
-  # views with Devise controllers you may want to whitelist your own fields so Devise
-  # controllers can use them. Format is { user: [:name, :age] }
-  # config.permitted_params = {}
-
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
@@ -53,10 +48,14 @@ Devise.setup do |config|
   # enable it only for database (email + password) authentication.
   # config.params_authenticatable = true
 
-  # Tell if authentication through HTTP Basic Auth is enabled. False by default.
+  # Tell if authentication through HTTP Auth is enabled. False by default.
   # It can be set to an array that will enable http authentication only for the
   # given strategies, for example, `config.http_authenticatable = [:token]` will
-  # enable it only for token authentication.
+  # enable it only for token authentication. The supported strategies are:
+  # :database      = Support basic authentication with authentication key + password
+  # :token         = Support basic authentication with token authentication key
+  # :token_options = Support token authentication with options as defined in
+  #                  http://api.rubyonrails.org/classes/ActionController/HttpAuthentication/Token.html
   # config.http_authenticatable = false
 
   # If http headers should be returned for AJAX requests. True by default.
@@ -87,7 +86,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = "5c90965c54cce10c068c0f77e7593f04b78d659677ebca7f2ba9a2dc5dc3854707cb7c13a20d8c6fbe32342855906d364cdf5c20c22872aad8847dc8881b8083"
+  # config.pepper = "3c3364f43a50aa2f021319dc2e79cba7db3bbc7f4c074b4f68d8050d8c9fe3c7c2ddcbc145ce67a07ac40da1238ac9020f731d713479556c09a8eab1a7fe0f5f"
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -193,7 +192,7 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  config.scoped_views = true
+  # config.scoped_views = false
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).

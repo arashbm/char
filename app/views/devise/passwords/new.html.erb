@@ -8,8 +8,8 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
+    <%= f.button :submit, t("devise.reset_password") %>
+    <%= render "devise/shared/links" %>
   </div>
 <% end %>
 
-<%= render "users/shared/links" %>
