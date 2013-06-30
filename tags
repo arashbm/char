@@ -4,125 +4,136 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-ActiveSupport	/home/arashbm/code/char/test/test_helper.rb	/^class ActiveSupport::TestCase$/;"	c
-AddClearanceToUsers	/home/arashbm/code/char/db/migrate/20130317214604_add_clearance_to_users.rb	/^class AddClearanceToUsers < ActiveRecord::Migration$/;"	c
-AddObjectChangesColumnToVersions	/home/arashbm/code/char/db/migrate/20130318091948_add_object_changes_column_to_versions.rb	/^class AddObjectChangesColumnToVersions < ActiveRecord::Migration$/;"	c
-AddRoleToUser	/home/arashbm/code/char/db/migrate/20130318004614_add_role_to_user.rb	/^class AddRoleToUser < ActiveRecord::Migration$/;"	c
-Application	/home/arashbm/code/char/config/application.rb	/^  class Application < Rails::Application$/;"	c	class:Char
-ApplicationController	/home/arashbm/code/char/app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
-ApplicationHelper	/home/arashbm/code/char/app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
-ApplicationResponder	/home/arashbm/code/char/lib/application_responder.rb	/^class ApplicationResponder < ActionController::Responder$/;"	c
-Blueprint	/home/arashbm/code/char/app/models/blueprint.rb	/^class Blueprint < ActiveRecord::Base$/;"	c
-BlueprintTest	/home/arashbm/code/char/test/models/blueprint_test.rb	/^class BlueprintTest < ActiveSupport::TestCase$/;"	c
-BlueprintsController	/home/arashbm/code/char/app/controllers/blueprints_controller.rb	/^class BlueprintsController < ApplicationController$/;"	c
-BlueprintsControllerTest	/home/arashbm/code/char/test/controllers/blueprints_controller_test.rb	/^class BlueprintsControllerTest < ActionController::TestCase$/;"	c
-BlueprintsHelper	/home/arashbm/code/char/app/helpers/blueprints_helper.rb	/^module BlueprintsHelper$/;"	m
-BlueprintsHelperTest	/home/arashbm/code/char/test/helpers/blueprints_helper_test.rb	/^class BlueprintsHelperTest < ActionView::TestCase$/;"	c
-Char	/home/arashbm/code/char/config/application.rb	/^module Char$/;"	m
-CreateBlueprints	/home/arashbm/code/char/db/migrate/20130322202204_create_blueprints.rb	/^class CreateBlueprints < ActiveRecord::Migration$/;"	c
-CreateDiscussions	/home/arashbm/code/char/db/migrate/20130322203717_create_discussions.rb	/^class CreateDiscussions < ActiveRecord::Migration$/;"	c
-CreatePosts	/home/arashbm/code/char/db/migrate/20130317202242_create_posts.rb	/^class CreatePosts < ActiveRecord::Migration$/;"	c
-CreateReviews	/home/arashbm/code/char/db/migrate/20130319103616_create_reviews.rb	/^class CreateReviews < ActiveRecord::Migration$/;"	c
-CreateUsers	/home/arashbm/code/char/db/migrate/20130317202047_create_users.rb	/^class CreateUsers < ActiveRecord::Migration$/;"	c
-CreateVersions	/home/arashbm/code/char/db/migrate/20130318091947_create_versions.rb	/^class CreateVersions < ActiveRecord::Migration$/;"	c
-DashboardHelper	/home/arashbm/code/char/app/helpers/dashboard_helper.rb	/^module DashboardHelper$/;"	m
-DashboardHelperTest	/home/arashbm/code/char/test/helpers/dashboard_helper_test.rb	/^class DashboardHelperTest < ActionView::TestCase$/;"	c
-DashboardsController	/home/arashbm/code/char/app/controllers/dashboards_controller.rb	/^class DashboardsController < ApplicationController$/;"	c
-Discussion	/home/arashbm/code/char/app/models/discussion.rb	/^class Discussion < ActiveRecord::Base$/;"	c
-DiscussionTest	/home/arashbm/code/char/test/models/discussion_test.rb	/^class DiscussionTest < ActiveSupport::TestCase$/;"	c
-DiscussionsController	/home/arashbm/code/char/app/controllers/discussions_controller.rb	/^class DiscussionsController < ApplicationController$/;"	c
-DiscussionsControllerTest	/home/arashbm/code/char/test/controllers/discussions_controller_test.rb	/^class DiscussionsControllerTest < ActionController::TestCase$/;"	c
-DiscussionsHelper	/home/arashbm/code/char/app/helpers/discussions_helper.rb	/^module DiscussionsHelper$/;"	m
-DiscussionsHelperTest	/home/arashbm/code/char/test/helpers/discussions_helper_test.rb	/^class DiscussionsHelperTest < ActionView::TestCase$/;"	c
-NestedResponder	/home/arashbm/code/char/lib/application_responder.rb	/^class NestedResponder < ApplicationResponder$/;"	c
-Post	/home/arashbm/code/char/app/models/post.rb	/^class Post < ActiveRecord::Base$/;"	c
-PostTest	/home/arashbm/code/char/test/models/post_test.rb	/^class PostTest < ActiveSupport::TestCase$/;"	c
-PostsController	/home/arashbm/code/char/app/controllers/posts_controller.rb	/^class PostsController < ApplicationController$/;"	c
-PostsHelper	/home/arashbm/code/char/app/helpers/posts_helper.rb	/^module PostsHelper$/;"	m
-PostsHelperTest	/home/arashbm/code/char/test/helpers/posts_helper_test.rb	/^class PostsHelperTest < ActionView::TestCase$/;"	c
-Review	/home/arashbm/code/char/app/models/review.rb	/^class Review < ActiveRecord::Base$/;"	c
-ReviewTest	/home/arashbm/code/char/test/models/review_test.rb	/^class ReviewTest < ActiveSupport::TestCase$/;"	c
-ReviewsController	/home/arashbm/code/char/app/controllers/reviews_controller.rb	/^class ReviewsController < ApplicationController$/;"	c
-ReviewsHelper	/home/arashbm/code/char/app/helpers/reviews_helper.rb	/^module ReviewsHelper$/;"	m
-ReviewsHelperTest	/home/arashbm/code/char/test/helpers/reviews_helper_test.rb	/^class ReviewsHelperTest < ActionView::TestCase$/;"	c
-RevisionHelperTest	/home/arashbm/code/char/test/helpers/revision_helper_test.rb	/^class RevisionHelperTest < ActionView::TestCase$/;"	c
-RevisionsController	/home/arashbm/code/char/app/controllers/revisions_controller.rb	/^class RevisionsController < ApplicationController$/;"	c
-RevisionsHelper	/home/arashbm/code/char/app/helpers/revisions_helper.rb	/^module RevisionsHelper$/;"	m
-User	/home/arashbm/code/char/app/models/user.rb	/^class User < ActiveRecord::Base$/;"	c
-UserTest	/home/arashbm/code/char/test/models/user_test.rb	/^class UserTest < ActiveSupport::TestCase$/;"	c
-UsersController	/home/arashbm/code/char/app/controllers/users_controller.rb	/^class UsersController < Clearance::UsersController$/;"	c
-UsersHelper	/home/arashbm/code/char/app/helpers/users_helper.rb	/^module UsersHelper$/;"	m
-admin?	/home/arashbm/code/char/app/models/user.rb	/^  def admin?$/;"	f	class:User
-blueprint_params	/home/arashbm/code/char/app/controllers/blueprints_controller.rb	/^  def blueprint_params$/;"	f	class:BlueprintsController
-change	/home/arashbm/code/char/db/migrate/20130317202047_create_users.rb	/^  def change$/;"	f	class:CreateUsers
-change	/home/arashbm/code/char/db/migrate/20130317202242_create_posts.rb	/^  def change$/;"	f	class:CreatePosts
-change	/home/arashbm/code/char/db/migrate/20130318004614_add_role_to_user.rb	/^  def change$/;"	f	class:AddRoleToUser
-change	/home/arashbm/code/char/db/migrate/20130319103616_create_reviews.rb	/^  def change$/;"	f	class:CreateReviews
-change	/home/arashbm/code/char/db/migrate/20130322202204_create_blueprints.rb	/^  def change$/;"	f	class:CreateBlueprints
-change	/home/arashbm/code/char/db/migrate/20130322203717_create_discussions.rb	/^  def change$/;"	f	class:CreateDiscussions
-create	/home/arashbm/code/char/app/controllers/blueprints_controller.rb	/^  def create$/;"	f	class:BlueprintsController
-create	/home/arashbm/code/char/app/controllers/discussions_controller.rb	/^  def create$/;"	f	class:DiscussionsController
-create	/home/arashbm/code/char/app/controllers/posts_controller.rb	/^  def create$/;"	f	class:PostsController
-create	/home/arashbm/code/char/app/controllers/reviews_controller.rb	/^  def create$/;"	f	class:ReviewsController
-destroy	/home/arashbm/code/char/app/controllers/blueprints_controller.rb	/^  def destroy$/;"	f	class:BlueprintsController
-destroy	/home/arashbm/code/char/app/controllers/posts_controller.rb	/^  def destroy$/;"	f	class:PostsController
-diff	/home/arashbm/code/char/app/helpers/revisions_helper.rb	/^  def diff(rev, attribute)$/;"	f
-discussion_params	/home/arashbm/code/char/app/controllers/discussions_controller.rb	/^  def discussion_params$/;"	f	class:DiscussionsController
-down	/home/arashbm/code/char/db/migrate/20130317214604_add_clearance_to_users.rb	/^  def self.down$/;"	F	class:AddClearanceToUsers
-down	/home/arashbm/code/char/db/migrate/20130318091947_create_versions.rb	/^  def self.down$/;"	F	class:CreateVersions
-down	/home/arashbm/code/char/db/migrate/20130318091948_add_object_changes_column_to_versions.rb	/^  def self.down$/;"	F	class:AddObjectChangesColumnToVersions
-edit	/home/arashbm/code/char/app/controllers/blueprints_controller.rb	/^  def edit$/;"	f	class:BlueprintsController
-edit	/home/arashbm/code/char/app/controllers/posts_controller.rb	/^  def edit$/;"	f	class:PostsController
-edit	/home/arashbm/code/char/app/controllers/users_controller.rb	/^  def edit$/;"	f	class:UsersController
-editable_posts	/home/arashbm/code/char/app/models/user.rb	/^  def editable_posts$/;"	f	class:User
-editable_users	/home/arashbm/code/char/app/models/user.rb	/^  def editable_users$/;"	f	class:User
-event_name	/home/arashbm/code/char/app/helpers/revisions_helper.rb	/^  def event_name(rev)$/;"	f
-find_post	/home/arashbm/code/char/app/controllers/reviews_controller.rb	/^  def find_post$/;"	f	class:ReviewsController
-find_post	/home/arashbm/code/char/app/controllers/revisions_controller.rb	/^  def find_post$/;"	f	class:RevisionsController
-first_name	/home/arashbm/code/char/app/models/user.rb	/^  def first_name$/;"	f	class:User
-get_blueprint	/home/arashbm/code/char/app/controllers/discussions_controller.rb	/^  def get_blueprint$/;"	f	class:DiscussionsController
-get_blueprints	/home/arashbm/code/char/app/controllers/blueprints_controller.rb	/^  def get_blueprints$/;"	f	class:BlueprintsController
-index	/home/arashbm/code/char/app/controllers/blueprints_controller.rb	/^  def index$/;"	f	class:BlueprintsController
-index	/home/arashbm/code/char/app/controllers/discussions_controller.rb	/^  def index$/;"	f	class:DiscussionsController
-index	/home/arashbm/code/char/app/controllers/posts_controller.rb	/^  def index$/;"	f	class:PostsController
-index	/home/arashbm/code/char/app/controllers/reviews_controller.rb	/^  def index$/;"	f	class:ReviewsController
-index	/home/arashbm/code/char/app/controllers/revisions_controller.rb	/^  def index$/;"	f	class:RevisionsController
-index	/home/arashbm/code/char/app/controllers/users_controller.rb	/^  def index$/;"	f	class:UsersController
-member_of_editorial?	/home/arashbm/code/char/app/models/user.rb	/^  def member_of_editorial?$/;"	f	class:User
-navigation_behavior	/home/arashbm/code/char/lib/application_responder.rb	/^  def navigation_behavior(error)$/;"	f	class:NestedResponder
-new	/home/arashbm/code/char/app/controllers/blueprints_controller.rb	/^  def new$/;"	f	class:BlueprintsController
-new	/home/arashbm/code/char/app/controllers/posts_controller.rb	/^  def new$/;"	f	class:PostsController
-new	/home/arashbm/code/char/app/controllers/users_controller.rb	/^  def new$/;"	f	class:UsersController
-one_per_post	/home/arashbm/code/char/app/models/review.rb	/^  def one_per_post$/;"	f	class:Review
-originator_name	/home/arashbm/code/char/app/helpers/revisions_helper.rb	/^  def originator_name(rev)$/;"	f
-post_discussion_anchor	/home/arashbm/code/char/app/controllers/application_controller.rb	/^  def post_discussion_anchor(p,c)$/;"	f	class:ApplicationController
-post_discussions_anchor	/home/arashbm/code/char/app/controllers/application_controller.rb	/^  def post_discussions_anchor(p)$/;"	f	class:ApplicationController
-post_footer	/home/arashbm/code/char/app/helpers/posts_helper.rb	/^  def post_footer(post)$/;"	f	class:PostsHelper
-post_params	/home/arashbm/code/char/app/controllers/posts_controller.rb	/^  def post_params$/;"	f	class:PostsController
-post_review_anchor	/home/arashbm/code/char/app/controllers/application_controller.rb	/^  def post_review_anchor(p,r)$/;"	f	class:ApplicationController
-post_reviews_anchor	/home/arashbm/code/char/app/controllers/application_controller.rb	/^  def post_reviews_anchor(p)$/;"	f	class:ApplicationController
-previous_next_btn	/home/arashbm/code/char/app/helpers/revisions_helper.rb	/^  def previous_next_btn(rev)$/;"	f	class:RevisionsHelper
-review_params	/home/arashbm/code/char/app/controllers/reviews_controller.rb	/^  def review_params$/;"	f	class:ReviewsController
-role_label	/home/arashbm/code/char/app/helpers/users_helper.rb	/^  def role_label(user)$/;"	f	class:UsersHelper
-setup	/home/arashbm/code/char/test/models/review_test.rb	/^  def setup$/;"	f	class:ReviewTest
-setup	/home/arashbm/code/char/test/models/user_test.rb	/^  def setup$/;"	f	class:UserTest
-show	/home/arashbm/code/char/app/controllers/blueprints_controller.rb	/^  def show$/;"	f	class:BlueprintsController
-show	/home/arashbm/code/char/app/controllers/dashboards_controller.rb	/^  def show$/;"	f	class:DashboardsController
-show	/home/arashbm/code/char/app/controllers/discussions_controller.rb	/^  def show$/;"	f	class:DiscussionsController
-show	/home/arashbm/code/char/app/controllers/posts_controller.rb	/^  def show$/;"	f	class:PostsController
-show	/home/arashbm/code/char/app/controllers/revisions_controller.rb	/^  def show$/;"	f	class:RevisionsController
-show	/home/arashbm/code/char/app/controllers/users_controller.rb	/^  def show$/;"	f	class:UsersController
-show_diff	/home/arashbm/code/char/app/helpers/revisions_helper.rb	/^  def show_diff(a,b)$/;"	f	class:RevisionsHelper
-truncated_body	/home/arashbm/code/char/app/helpers/posts_helper.rb	/^  def truncated_body(post)$/;"	f	class:PostsHelper
-truncated_title	/home/arashbm/code/char/app/helpers/posts_helper.rb	/^  def truncated_title(post)$/;"	f	class:PostsHelper
-up	/home/arashbm/code/char/db/migrate/20130317214604_add_clearance_to_users.rb	/^  def self.up$/;"	F	class:AddClearanceToUsers
-up	/home/arashbm/code/char/db/migrate/20130318091947_create_versions.rb	/^  def self.up$/;"	F	class:CreateVersions
-up	/home/arashbm/code/char/db/migrate/20130318091948_add_object_changes_column_to_versions.rb	/^  def self.up$/;"	F	class:AddObjectChangesColumnToVersions
-update	/home/arashbm/code/char/app/controllers/blueprints_controller.rb	/^  def update$/;"	f	class:BlueprintsController
-update	/home/arashbm/code/char/app/controllers/posts_controller.rb	/^  def update$/;"	f	class:PostsController
-update	/home/arashbm/code/char/app/controllers/reviews_controller.rb	/^  def update$/;"	f	class:ReviewsController
-update	/home/arashbm/code/char/app/controllers/users_controller.rb	/^  def update$/;"	f	class:UsersController
-user_from_params	/home/arashbm/code/char/app/controllers/users_controller.rb	/^  def user_from_params$/;"	f	class:UsersController
-user_params	/home/arashbm/code/char/app/controllers/users_controller.rb	/^  def user_params$/;"	f	class:UsersController
-visible_posts	/home/arashbm/code/char/app/models/user.rb	/^  def visible_posts$/;"	f	class:User
-visible_users	/home/arashbm/code/char/app/models/user.rb	/^  def visible_users$/;"	f	class:User
+ActiveSupport	/home/arashbm/char/test/test_helper.rb	/^class ActiveSupport::TestCase$/;"	c
+AddClearanceToUsers	/home/arashbm/char/db/migrate/20130317214604_add_clearance_to_users.rb	/^class AddClearanceToUsers < ActiveRecord::Migration$/;"	c
+AddDeviseToUsers	/home/arashbm/char/db/migrate/20130324094037_add_devise_to_users.rb	/^class AddDeviseToUsers < ActiveRecord::Migration$/;"	c
+AddObjectChangesColumnToVersions	/home/arashbm/char/db/migrate/20130318091948_add_object_changes_column_to_versions.rb	/^class AddObjectChangesColumnToVersions < ActiveRecord::Migration$/;"	c
+AddRoleToUser	/home/arashbm/char/db/migrate/20130318004614_add_role_to_user.rb	/^class AddRoleToUser < ActiveRecord::Migration$/;"	c
+Application	/home/arashbm/char/config/application.rb	/^  class Application < Rails::Application$/;"	c	class:Char
+ApplicationController	/home/arashbm/char/app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	/home/arashbm/char/app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+ApplicationResponder	/home/arashbm/char/lib/application_responder.rb	/^class ApplicationResponder < ActionController::Responder$/;"	c
+Blueprint	/home/arashbm/char/app/models/blueprint.rb	/^class Blueprint < ActiveRecord::Base$/;"	c
+BlueprintTest	/home/arashbm/char/test/models/blueprint_test.rb	/^class BlueprintTest < ActiveSupport::TestCase$/;"	c
+BlueprintsController	/home/arashbm/char/app/controllers/blueprints_controller.rb	/^class BlueprintsController < ApplicationController$/;"	c
+BlueprintsControllerTest	/home/arashbm/char/test/controllers/blueprints_controller_test.rb	/^class BlueprintsControllerTest < ActionController::TestCase$/;"	c
+BlueprintsHelper	/home/arashbm/char/app/helpers/blueprints_helper.rb	/^module BlueprintsHelper$/;"	m
+BlueprintsHelperTest	/home/arashbm/char/test/helpers/blueprints_helper_test.rb	/^class BlueprintsHelperTest < ActionView::TestCase$/;"	c
+Char	/home/arashbm/char/config/application.rb	/^module Char$/;"	m
+CreateBlueprints	/home/arashbm/char/db/migrate/20130322202204_create_blueprints.rb	/^class CreateBlueprints < ActiveRecord::Migration$/;"	c
+CreateDiscussions	/home/arashbm/char/db/migrate/20130322203717_create_discussions.rb	/^class CreateDiscussions < ActiveRecord::Migration$/;"	c
+CreatePosts	/home/arashbm/char/db/migrate/20130317202242_create_posts.rb	/^class CreatePosts < ActiveRecord::Migration$/;"	c
+CreateReviews	/home/arashbm/char/db/migrate/20130319103616_create_reviews.rb	/^class CreateReviews < ActiveRecord::Migration$/;"	c
+CreateUsers	/home/arashbm/char/db/migrate/20130317202047_create_users.rb	/^class CreateUsers < ActiveRecord::Migration$/;"	c
+CreateVersions	/home/arashbm/char/db/migrate/20130318091947_create_versions.rb	/^class CreateVersions < ActiveRecord::Migration$/;"	c
+DashboardHelper	/home/arashbm/char/app/helpers/dashboard_helper.rb	/^module DashboardHelper$/;"	m
+DashboardHelperTest	/home/arashbm/char/test/helpers/dashboard_helper_test.rb	/^class DashboardHelperTest < ActionView::TestCase$/;"	c
+DashboardsController	/home/arashbm/char/app/controllers/dashboards_controller.rb	/^class DashboardsController < ApplicationController$/;"	c
+Discussion	/home/arashbm/char/app/models/discussion.rb	/^class Discussion < ActiveRecord::Base$/;"	c
+DiscussionTest	/home/arashbm/char/test/models/discussion_test.rb	/^class DiscussionTest < ActiveSupport::TestCase$/;"	c
+DiscussionsController	/home/arashbm/char/app/controllers/discussions_controller.rb	/^class DiscussionsController < ApplicationController$/;"	c
+DiscussionsControllerTest	/home/arashbm/char/test/controllers/discussions_controller_test.rb	/^class DiscussionsControllerTest < ActionController::TestCase$/;"	c
+DiscussionsHelper	/home/arashbm/char/app/helpers/discussions_helper.rb	/^module DiscussionsHelper$/;"	m
+DiscussionsHelperTest	/home/arashbm/char/test/helpers/discussions_helper_test.rb	/^class DiscussionsHelperTest < ActionView::TestCase$/;"	c
+NestedResponder	/home/arashbm/char/lib/application_responder.rb	/^class NestedResponder < ApplicationResponder$/;"	c
+Post	/home/arashbm/char/app/models/post.rb	/^class Post < ActiveRecord::Base$/;"	c
+PostTest	/home/arashbm/char/test/models/post_test.rb	/^class PostTest < ActiveSupport::TestCase$/;"	c
+PostsController	/home/arashbm/char/app/controllers/posts_controller.rb	/^class PostsController < ApplicationController$/;"	c
+PostsHelper	/home/arashbm/char/app/helpers/posts_helper.rb	/^module PostsHelper$/;"	m
+PostsHelperTest	/home/arashbm/char/test/helpers/posts_helper_test.rb	/^class PostsHelperTest < ActionView::TestCase$/;"	c
+RemoveClearanceFromUsers	/home/arashbm/char/db/migrate/20130323100939_remove_clearance_from_users.rb	/^class RemoveClearanceFromUsers < ActiveRecord::Migration$/;"	c
+Review	/home/arashbm/char/app/models/review.rb	/^class Review < ActiveRecord::Base$/;"	c
+ReviewTest	/home/arashbm/char/test/models/review_test.rb	/^class ReviewTest < ActiveSupport::TestCase$/;"	c
+ReviewsController	/home/arashbm/char/app/controllers/reviews_controller.rb	/^class ReviewsController < ApplicationController$/;"	c
+ReviewsHelper	/home/arashbm/char/app/helpers/reviews_helper.rb	/^module ReviewsHelper$/;"	m
+ReviewsHelperTest	/home/arashbm/char/test/helpers/reviews_helper_test.rb	/^class ReviewsHelperTest < ActionView::TestCase$/;"	c
+RevisionHelperTest	/home/arashbm/char/test/helpers/revision_helper_test.rb	/^class RevisionHelperTest < ActionView::TestCase$/;"	c
+RevisionsController	/home/arashbm/char/app/controllers/revisions_controller.rb	/^class RevisionsController < ApplicationController$/;"	c
+RevisionsHelper	/home/arashbm/char/app/helpers/revisions_helper.rb	/^module RevisionsHelper$/;"	m
+User	/home/arashbm/char/app/models/user.rb	/^class User < ActiveRecord::Base$/;"	c
+UserTest	/home/arashbm/char/test/models/user_test.rb	/^class UserTest < ActiveSupport::TestCase$/;"	c
+UsersController	/home/arashbm/char/app/controllers/users_controller.rb	/^class UsersController < ApplicationController$/;"	c
+UsersHelper	/home/arashbm/char/app/helpers/users_helper.rb	/^module UsersHelper$/;"	m
+admin?	/home/arashbm/char/app/models/user.rb	/^  def admin?$/;"	f	class:User
+authorize	/home/arashbm/char/app/controllers/application_controller.rb	/^  def authorize$/;"	f	class:ApplicationController
+blueprint_params	/home/arashbm/char/app/controllers/blueprints_controller.rb	/^  def blueprint_params$/;"	f	class:BlueprintsController
+change	/home/arashbm/char/db/migrate/20130317202047_create_users.rb	/^  def change$/;"	f	class:CreateUsers
+change	/home/arashbm/char/db/migrate/20130317202242_create_posts.rb	/^  def change$/;"	f	class:CreatePosts
+change	/home/arashbm/char/db/migrate/20130318004614_add_role_to_user.rb	/^  def change$/;"	f	class:AddRoleToUser
+change	/home/arashbm/char/db/migrate/20130319103616_create_reviews.rb	/^  def change$/;"	f	class:CreateReviews
+change	/home/arashbm/char/db/migrate/20130322202204_create_blueprints.rb	/^  def change$/;"	f	class:CreateBlueprints
+change	/home/arashbm/char/db/migrate/20130322203717_create_discussions.rb	/^  def change$/;"	f	class:CreateDiscussions
+collectify_statuses	/home/arashbm/char/app/helpers/blueprints_helper.rb	/^  def collectify_statuses(list)$/;"	f	class:BlueprintsHelper
+create	/home/arashbm/char/app/controllers/blueprints_controller.rb	/^  def create$/;"	f	class:BlueprintsController
+create	/home/arashbm/char/app/controllers/discussions_controller.rb	/^  def create$/;"	f	class:DiscussionsController
+create	/home/arashbm/char/app/controllers/posts_controller.rb	/^  def create$/;"	f	class:PostsController
+create	/home/arashbm/char/app/controllers/reviews_controller.rb	/^  def create$/;"	f	class:ReviewsController
+destroy	/home/arashbm/char/app/controllers/blueprints_controller.rb	/^  def destroy$/;"	f	class:BlueprintsController
+destroy	/home/arashbm/char/app/controllers/posts_controller.rb	/^  def destroy$/;"	f	class:PostsController
+diff	/home/arashbm/char/app/helpers/revisions_helper.rb	/^  def diff(rev, attribute)$/;"	f
+discussion_params	/home/arashbm/char/app/controllers/discussions_controller.rb	/^  def discussion_params$/;"	f	class:DiscussionsController
+down	/home/arashbm/char/db/migrate/20130317214604_add_clearance_to_users.rb	/^  def self.down$/;"	F	class:AddClearanceToUsers
+down	/home/arashbm/char/db/migrate/20130318091947_create_versions.rb	/^  def self.down$/;"	F	class:CreateVersions
+down	/home/arashbm/char/db/migrate/20130318091948_add_object_changes_column_to_versions.rb	/^  def self.down$/;"	F	class:AddObjectChangesColumnToVersions
+down	/home/arashbm/char/db/migrate/20130323100939_remove_clearance_from_users.rb	/^  def self.down$/;"	F	class:RemoveClearanceFromUsers
+down	/home/arashbm/char/db/migrate/20130324094037_add_devise_to_users.rb	/^  def self.down$/;"	F	class:AddDeviseToUsers
+edit	/home/arashbm/char/app/controllers/blueprints_controller.rb	/^  def edit$/;"	f	class:BlueprintsController
+edit	/home/arashbm/char/app/controllers/posts_controller.rb	/^  def edit$/;"	f	class:PostsController
+edit	/home/arashbm/char/app/controllers/users_controller.rb	/^  def edit$/;"	f	class:UsersController
+editable_blueprints	/home/arashbm/char/app/models/user.rb	/^  def editable_blueprints$/;"	f	class:User
+editable_posts	/home/arashbm/char/app/models/user.rb	/^  def editable_posts$/;"	f	class:User
+editable_users	/home/arashbm/char/app/models/user.rb	/^  def editable_users$/;"	f	class:User
+event_name	/home/arashbm/char/app/helpers/revisions_helper.rb	/^  def event_name(rev)$/;"	f
+find_post	/home/arashbm/char/app/controllers/reviews_controller.rb	/^  def find_post$/;"	f	class:ReviewsController
+find_post	/home/arashbm/char/app/controllers/revisions_controller.rb	/^  def find_post$/;"	f	class:RevisionsController
+first_name	/home/arashbm/char/app/models/user.rb	/^  def first_name$/;"	f	class:User
+get_blueprint	/home/arashbm/char/app/controllers/discussions_controller.rb	/^  def get_blueprint$/;"	f	class:DiscussionsController
+get_blueprints	/home/arashbm/char/app/controllers/blueprints_controller.rb	/^  def get_blueprints$/;"	f	class:BlueprintsController
+index	/home/arashbm/char/app/controllers/blueprints_controller.rb	/^  def index$/;"	f	class:BlueprintsController
+index	/home/arashbm/char/app/controllers/discussions_controller.rb	/^  def index$/;"	f	class:DiscussionsController
+index	/home/arashbm/char/app/controllers/posts_controller.rb	/^  def index$/;"	f	class:PostsController
+index	/home/arashbm/char/app/controllers/reviews_controller.rb	/^  def index$/;"	f	class:ReviewsController
+index	/home/arashbm/char/app/controllers/revisions_controller.rb	/^  def index$/;"	f	class:RevisionsController
+index	/home/arashbm/char/app/controllers/users_controller.rb	/^  def index$/;"	f	class:UsersController
+member_of_editorial?	/home/arashbm/char/app/models/user.rb	/^  def member_of_editorial?$/;"	f	class:User
+navigation_behavior	/home/arashbm/char/lib/application_responder.rb	/^  def navigation_behavior(error)$/;"	f	class:NestedResponder
+new	/home/arashbm/char/app/controllers/blueprints_controller.rb	/^  def new$/;"	f	class:BlueprintsController
+new	/home/arashbm/char/app/controllers/posts_controller.rb	/^  def new$/;"	f	class:PostsController
+one_per_post	/home/arashbm/char/app/models/review.rb	/^  def one_per_post$/;"	f	class:Review
+post_discussion_anchor	/home/arashbm/char/app/controllers/application_controller.rb	/^  def post_discussion_anchor(p,c)$/;"	f	class:ApplicationController
+post_discussions_anchor	/home/arashbm/char/app/controllers/application_controller.rb	/^  def post_discussions_anchor(p)$/;"	f	class:ApplicationController
+post_footer	/home/arashbm/char/app/helpers/posts_helper.rb	/^  def post_footer(post)$/;"	f	class:PostsHelper
+post_params	/home/arashbm/char/app/controllers/posts_controller.rb	/^  def post_params$/;"	f	class:PostsController
+post_review_anchor	/home/arashbm/char/app/controllers/application_controller.rb	/^  def post_review_anchor(p,r)$/;"	f	class:ApplicationController
+post_reviews_anchor	/home/arashbm/char/app/controllers/application_controller.rb	/^  def post_reviews_anchor(p)$/;"	f	class:ApplicationController
+previous_next_btn	/home/arashbm/char/app/helpers/revisions_helper.rb	/^  def previous_next_btn(rev)$/;"	f	class:RevisionsHelper
+review_params	/home/arashbm/char/app/controllers/reviews_controller.rb	/^  def review_params$/;"	f	class:ReviewsController
+role_label	/home/arashbm/char/app/helpers/users_helper.rb	/^  def role_label(user)$/;"	f	class:UsersHelper
+setup	/home/arashbm/char/test/models/review_test.rb	/^  def setup$/;"	f	class:ReviewTest
+setup	/home/arashbm/char/test/models/user_test.rb	/^  def setup$/;"	f	class:UserTest
+show	/home/arashbm/char/app/controllers/blueprints_controller.rb	/^  def show$/;"	f	class:BlueprintsController
+show	/home/arashbm/char/app/controllers/dashboards_controller.rb	/^  def show$/;"	f	class:DashboardsController
+show	/home/arashbm/char/app/controllers/discussions_controller.rb	/^  def show$/;"	f	class:DiscussionsController
+show	/home/arashbm/char/app/controllers/posts_controller.rb	/^  def show$/;"	f	class:PostsController
+show	/home/arashbm/char/app/controllers/revisions_controller.rb	/^  def show$/;"	f	class:RevisionsController
+show	/home/arashbm/char/app/controllers/users_controller.rb	/^  def show$/;"	f	class:UsersController
+show_diff	/home/arashbm/char/app/helpers/revisions_helper.rb	/^  def show_diff(a,b)$/;"	f	class:RevisionsHelper
+status_label	/home/arashbm/char/app/helpers/blueprints_helper.rb	/^  def status_label(s)$/;"	f	class:BlueprintsHelper
+status_label_classes	/home/arashbm/char/app/helpers/blueprints_helper.rb	/^  def status_label_classes(s)$/;"	f	class:BlueprintsHelper
+status_text	/home/arashbm/char/app/helpers/blueprints_helper.rb	/^  def status_text(text) $/;"	f	class:BlueprintsHelper
+terminator_name	/home/arashbm/char/app/helpers/revisions_helper.rb	/^  def terminator_name(rev)$/;"	f
+truncated_body	/home/arashbm/char/app/helpers/posts_helper.rb	/^  def truncated_body(post)$/;"	f	class:PostsHelper
+truncated_title	/home/arashbm/char/app/helpers/posts_helper.rb	/^  def truncated_title(post)$/;"	f	class:PostsHelper
+up	/home/arashbm/char/db/migrate/20130317214604_add_clearance_to_users.rb	/^  def self.up$/;"	F	class:AddClearanceToUsers
+up	/home/arashbm/char/db/migrate/20130318091947_create_versions.rb	/^  def self.up$/;"	F	class:CreateVersions
+up	/home/arashbm/char/db/migrate/20130318091948_add_object_changes_column_to_versions.rb	/^  def self.up$/;"	F	class:AddObjectChangesColumnToVersions
+up	/home/arashbm/char/db/migrate/20130323100939_remove_clearance_from_users.rb	/^  def self.up$/;"	F	class:RemoveClearanceFromUsers
+up	/home/arashbm/char/db/migrate/20130324094037_add_devise_to_users.rb	/^  def self.up$/;"	F	class:AddDeviseToUsers
+update	/home/arashbm/char/app/controllers/blueprints_controller.rb	/^  def update$/;"	f	class:BlueprintsController
+update	/home/arashbm/char/app/controllers/posts_controller.rb	/^  def update$/;"	f	class:PostsController
+update	/home/arashbm/char/app/controllers/reviews_controller.rb	/^  def update$/;"	f	class:ReviewsController
+update	/home/arashbm/char/app/controllers/users_controller.rb	/^  def update$/;"	f	class:UsersController
+user_params	/home/arashbm/char/app/controllers/users_controller.rb	/^  def user_params$/;"	f	class:UsersController
+visible_blueprints	/home/arashbm/char/app/models/user.rb	/^  def visible_blueprints$/;"	f	class:User
+visible_posts	/home/arashbm/char/app/models/user.rb	/^  def visible_posts$/;"	f	class:User
+visible_users	/home/arashbm/char/app/models/user.rb	/^  def visible_users$/;"	f	class:User
