@@ -13,9 +13,12 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require wysiwym
 //= require moment
-//= require twitter/bootstrap
+//= require bootstrap
 //= require angular
+//= require sanitize
 //= require angular-resource
+//= require marked
 //= require_tree .
 //= require turbolinks
