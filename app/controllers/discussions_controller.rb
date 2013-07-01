@@ -15,9 +15,7 @@ class DiscussionsController < ApplicationController
     @discussion = @discussions.create(discussion_params) do |a|
       a.user = current_user
     end
-    respond_with @blueprint, @discussion do |f|
-      f.json { render json: @discussion.to_json(include: { user: { only: [:name, :id] }}) }
-    end
+    respond_with @blueprint, @discussion
   end
 
   def show
@@ -33,6 +31,6 @@ class DiscussionsController < ApplicationController
   end
 
   def discussion_params
-    params.require(:discussion).permit(:body)
+    params.fetch(:discussion, {}).permit(:body)
   end
 end

@@ -1,56 +1,67 @@
-window.DiscussionListCtrl = ($scope, $http, $timeout) ->
+window.BlueprintDiscussionsCtrl = ($scope, $http, $timeout, Discussion) ->
+  queryvars =
+    discussableType: 'blueprints'
+    discussableId: gon.params.id
+
+  $scope.listStatus = 'ready' # ready, loading, error
+  setListStatus = (to) ->
+    $scope.listStatus = to
+
+  $scope.formStatus = 'ready' # ready, busy, error
+  setFormStatus = (to) ->
+    $scope.formStatus = to
+
+  $scope.discussionForm = {}
+  $scope.discussionFormErrors = {}
+
+  $scope.fieldClass = (el) ->
+    if $scope.discussionFormErrors[el] isnt undefined then 'error' else ''
+
+  $scope.btnClass = ->
+    switch $scope.listStatus
+      when 'loading' then 'disabled'
+      when 'ready' then ''
+      when 'error' then 'btn-warning'
+      else ''
+
+  $scope.btnIconClass = ->
+    switch $scope.listStatus
+      when 'loading' then 'icon-spin icon-refresh'
+      else 'icon-refresh'
+
+  $scope.formIconClass = ->
+    switch $scope.formStatus
+      when 'busy' then 'icon-spin icon-spinner'
+      else ''
+
+  querySuccessCallback = (data) ->
+    $scope.discussions = data
+    setListStatus 'ready'
+
+  queryErrorCallback = ->
+    setListStatus 'error'
+
+  createSuccessCallback = (data) ->
+    setFormStatus 'ready'
+    $scope.discussionFormErrors = {}
+    # reset the form
+    $scope.discussionForm = {}
+    $scope.reload()
+
+  createErrorCallback = (data) ->
+    setFormStatus 'error'
+    console.log data
+    $scope.discussionFormErrors = data.data.errors
+    console.log $scope.discussionFormErrors
 
   $scope.reload = ->
-    $http.get("/blueprints/#{$scope.blueprint_id}/discussions.json").success (data, status) ->
-      $scope.discussions = data
+    setListStatus 'loading'
+    Discussion.query queryvars, querySuccessCallback, queryErrorCallback
 
-  $scope.autoReload = ->
-    $scope.reload()
-    $timeout($scope.autoReload, 10000)
+  $scope.reload()
 
-  # bootstrap discussions from DOM
-  $scope.discussions = $('#discussions-list').data('discussions')
-
-  # setup auto reload every 30 secs
-  $scope.autoReload()
-  
-  $scope.blueprint_id = parseInt window.location.toString().match(/blueprints\/(\d+)/)[1]
-
-
-  $scope.addDiscussion = ->
-    # create a json
-    date = new Date
-    newDis =
-      authenticity_token: $('input[name="authenticity_token"]')[0].value
-      discussion:
-        body: $scope.body
-        user_id: window.currentUser.id
-        user:
-          id: window.currentUser.id
-          name: window.currentUser.name
-        created_at: date.toISOString()
-        temp: 1
-    $scope.discussions.push newDis['discussion']
-
-    # reset all errors
-    $scope.wrapperClass = { body: '' }
-    $scope.errors = { base: '', body: '' }
-
-    # reset the form
-    $scope.body = ''
-
-    # send the request
-    promis = $http.post("/blueprints/#{$scope.blueprint_id}/discussions.json", newDis)
-    promis.success (data) ->
-      # reload to get the latest
-      $scope.refresh()
-    promis.error (data, status) ->
-      console.log 'ERRRRRRRRRRA', status, data
-
-      # add error to proper fields
-      $scope.wrapperClass = { body: 'error' }
-      $scope.errors = data['errors'] if status == 422
-
-      # pop it back to form
-      d = $scope.discussions.pop()
-      $scope.body = d.body
+  $scope.createDiscussion = ->
+    console.log $scope.discussionForm
+    discussion = new Discussion {discussion: $scope.discussionForm}
+    setFormStatus 'busy'
+    discussion.$save queryvars, createSuccessCallback, createErrorCallback

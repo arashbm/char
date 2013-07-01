@@ -1,27 +1,37 @@
-<div ng-app='char'>
-  <%= content_tag :div, id: 'discussions-list',
-        'ng-controller' => 'DiscussionListCtrl',
-        data: { discussions: @blueprint.discussions.to_json(include: { user: {only: [:id , :name]} }) } do %>
-    <h2><%= t '.discussions', count: '5' %></h2>
-    <div>
-      <div ng-repeat="discussion in discussions">
-        {{discussion.body}}
-        <div class='discussion-footer'>
-          <span ng-show='discussion.temp'>
-            <i class='icon-spinner icon-spin'></i> <%= t '.working' %>|
+<div ng-controller = 'BlueprintDiscussionsCtrl'>
+  <h2>
+    <%= t '.discussions', count: '5' %>
+    <a id="reloadBtn" ng-click='reload()' class='btn {{btnClass()}}' >
+      <i class='{{ btnIconClass() }}'></i>
+    </a>
+  </h2>
+  <div>
+    <div ng-repeat="discussion in discussions" class='row discussion'>
+      <div class='span1'>
+        <img src="http://placehold.it/64x64" class="img-rounded">
+      </div>
+      <div class='discussion-body'>
+        <strong>{{discussion.user.name}}:</strong>
+        <span ng-bind-html-unsafe="discussion.body | marked"></span>
+      </div>
+      <div class='discussion-footer'>
+        <time datetime='{{discussion.created_at}}'>{{discussion.created_at | timeAgo | persianNum }}</time>
+      </div>
+    </div> <%# ng-repeat %>
+  </div>
+
+  <div>
+    <form id='newDiscussionForm'>
+      <fieldset>
+        <legend><%= t '.your_comment' %></legend>
+        <div class='control-group {{fieldClass("body")}}'>
+          <textarea rows=5 ng-model='discussionForm.body' class='input-block-level'></textarea>
+          <span class="help-inline" ng-show='discussionFormErrors.body[0]'>
+            {{discussionFormErrors.body[0]}}
           </span>
-          <i class='icon-user'></i> <a href='/users/{{discussion.user.id}}'>{{discussion.user.name}}</a> |
-          <time datetime='{{discussion.created_at}}'>{{discussion.created_at | timeAgo | persianNum }}</time>
         </div>
-        <hr />
-      </div> <%# ng-repeat %>
-    </div>
-    <div>
-      <%= simple_form_for [@blueprint, @blueprint.discussions.new], html: { 'ng-submit' => "addDiscussion()" }, url: '' do |f| %>
-        <%= f.input :body, input_html: {class: 'span4', rows: '4', 'ng-model' => 'body' },
-          wrapper_html: { class: '{{wrapperClass.body}}' }, hint: '{{errors.body[0]}}'%>
-        <%= f.button :submit, id: 'discussion-submit' %>
-      <% end %>
-    </div>
-  <% end %>
+        <button class="btn" id='discussionFormSubmit' ng-click='createDiscussion()'><i class={{formIconClass()}}></i> <%= t '.send_your_comment' %></button>
+      </fieldset>
+    </form>
+  </div>
 </div>

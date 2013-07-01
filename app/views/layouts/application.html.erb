@@ -28,11 +28,13 @@
 
   <body>
 
+    <%= include_gon %>
+
     <header>
       <%= render (user_signed_in? ? 'layouts/user_navbar' : 'layouts/navbar') %>
     </header>
 
-    <div id="container" class="container" data-current-user='<%= (current_user || {}).to_json %>'>
+    <div id="container" class="container" data-current-user='<%= (current_user || {}).to_json %>' ng-app="char">
       <%= bootstrap_flash %>
       <%= content_tag :div, class: 'row' do %>
         <%= yield %>

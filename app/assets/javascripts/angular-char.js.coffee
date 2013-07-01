@@ -1,4 +1,12 @@
-window.Char = angular.module('char', [])
+window.Backend = angular.module('backend', ['ngResource'])
+Backend.config ($httpProvider) ->
+  $httpProvider.defaults.headers.common['X-CSRF-Token'] = gon.authenticityToken
+
+Backend.factory 'Discussion', ($resource)  ->
+  Discussion = $resource('/:discussableType/:discussableId/discussions/:id',
+    {}, {update: { method: 'PATCH' }})
+
+window.Char = angular.module('char', ['ngSanitize', 'backend'])
 
 Char.factory('nowTime', ['$timeout', ($timeout) ->
   nowTime = Date.now()
@@ -16,3 +24,14 @@ Char.filter 'timeAgo', ['nowTime', (now) ->
 Char.filter 'persianNum', ->
   (input) ->
     input.replace /\d/g, (n) -> {0:'۰',1:'۱',2:'۲',3:'۳',4:'۴',5:'۵',6:'۶',7:'۷',8:'۸',9:'۹'}[n]
+
+Char.filter 'marked', ->
+  (input) -> $sanitize marked input
+
+Char.directive 'markdown', ->
+  {
+    restrict: 'A',
+    link: (scope, element, attrs) ->
+      htmlText = $sanitize marked element.text()
+      element.html htmlText
+  }
