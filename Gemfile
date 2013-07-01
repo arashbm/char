@@ -50,3 +50,5 @@ gem 'devise-i18n'
 gem "paper_trail", github: 'airblade/paper_trail', branch: 'rails4'
 
 gem 'gon'
+
+gem 'rails_12factor'
