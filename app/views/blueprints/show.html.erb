@@ -3,7 +3,7 @@
   <h1><%= Blueprint.model_name.human %>: <%= @blueprint.title %> <%= status_label(@blueprint.status) %> <small><%= @blueprint.creator.name  %></small></h1>
 </div>
 
-  <div><%= @blueprint.description %></div>
+  <div markdown><%= @blueprint.description %></div>
 
 <div class="form-actions">
   <%= link_to t("helpers.links.edit_html"),

@@ -2,7 +2,9 @@ require "application_responder"
 
 class ApplicationController < ActionController::Base
 
-  before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :send_data_to_js
+  before_action :simulate_slow_connection if Rails.env.development?
 
   self.responder = ApplicationResponder
   respond_to :html, :json
@@ -37,5 +39,15 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :password, :password_confirmation) }
+  end
+  
+  def simulate_slow_connection
+    sleep 2
+  end
+
+  def send_data_to_js
+    gon.authenticityToken = form_authenticity_token
+    gon.current_user = signed_in? ? current_user : nil
+    gon.params = params
   end
 end
