@@ -12,8 +12,11 @@ class DiscussionsController < ApplicationController
   end
 
   def create
-    @discussion = @discussions.create(discussion_params) do |a|
+    @discussion = @discussions.new(discussion_params) do |a|
       a.user = current_user
+    end
+    if @discussion.save
+      current_user.activities.create(acted: @discussion, action: 'discussion:create')
     end
     respond_with @blueprint, @discussion
   end

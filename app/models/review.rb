@@ -2,6 +2,8 @@ class Review < ActiveRecord::Base
   belongs_to :user
   belongs_to :post
 
+  has_many :activities, as: :acted
+
   validates :user, presence: true
   validates :post, presence: true
 
