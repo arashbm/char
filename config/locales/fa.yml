@@ -1,6 +1,16 @@
 fa:
   char: چارپایه
 
+  activities:
+    helpers:
+      you: شما
+      someone: کسی
+      first_person_done: کردید
+      third_person_done: کرد
+    post:
+      create: "%{name} یک مطلب جدید ایجاد %{verb}."
+      update: "%{name} مطلبی را به روز %{verb}."
+
   helpers:
     errors:
       more_than_one_review_per_post: برای هر مطلب یک نقد بیشتر نمی‌توانید بنویسید. همان نقد قبلی را ویرایش کنید. اگر می‌توانید برای بحث بیشتر از قابلیت بحث استفاده کنید.

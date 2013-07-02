@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  acted_id: 
+  acted_type: MyString
+  action: MyString
+  actor_id: 
+  parameters: MyText
+
+two:
+  acted_id: 
+  acted_type: MyString
+  action: MyString
+  actor_id: 
+  parameters: MyText
