@@ -1,0 +1,3 @@
+<%= t('activities.review.update_html', actor_name: activity_actor_name(activity.actor),
+      post_title: link_to(activity.acted.post.title, activity.acted.post),
+      verb_suffix: verb_suffix(activity.actor), review_path: post_review_anchor(activity.acted.post, activity.acted)) %>

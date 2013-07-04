@@ -1,4 +1,4 @@
-<% action = activity.action.gsub ':','.' %>
+<% action = activity.action.gsub ':','/' %>
 <li>
-  <%= t "activities.#{action}", name: activity_name(activity), verb: activity_verb(activity)%>
+  <%= render "activities/#{action}", activity: activity %>
 </li>

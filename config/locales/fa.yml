@@ -5,11 +5,14 @@ fa:
     helpers:
       you: شما
       someone: کسی
-      first_person_done: کردید
-      third_person_done: کرد
+      first_person_suffix: ید
+      third_person_suffix: ''
     post:
-      create: "%{name} یک مطلب جدید ایجاد %{verb}."
-      update: "%{name} مطلبی را به روز %{verb}."
+      create_html: "%{actor_name} مطلب جدیدی با عنوان «%{post_title}» ایجاد کرد%{verb_suffix}."
+      update_html: "%{actor_name} مطلب «%{post_title}» را به روز کرد%{verb_suffix}. تغییرات را <a href='%{revision_path}'>مشاهده</a> کنید."
+    review:
+      create_html: "%{actor_name} <a href='%{review_path}'>نقد جدیدی</a> بر مطلب «%{post_title}» نوشت%{verb_suffix}."
+      update_html: "%{actor_name} <a href='%{review_path}'>نقد خود</a> بر مطلب «%{post_title}» را به روز کرد%{verb_suffix}."
 
   helpers:
     errors:

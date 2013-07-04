@@ -1,19 +1,19 @@
 module ActivitiesHelper
-  def activity_verb(activity)
-    if activity.actor == current_user
-      t('activities.helpers.first_person_done')
+  def verb_suffix(actor)
+    if actor == current_user
+      t('activities.helpers.first_person_suffix')
     else
-      t('activities.helpers.third_person_done')
+      t('activities.helpers.third_person_suffix')
     end
   end
 
-  def activity_name(activity)
-    if !activity.actor
+  def activity_actor_name(actor)
+    if !actor
       t('activities.helpers.someone')
-    elsif activity.actor == current_user
+    elsif actor == current_user
       t('activities.helpers.you')
     else
-      activity.actor.name
+      actor.name
     end
   end
 end
