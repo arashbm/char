@@ -10,13 +10,17 @@ class ReviewsController < ApplicationController
   def create
     @review = @post.reviews.new(review_params)
     @review.user = current_user
-    @review.save!
+    if @review.save!
+      current_user.activities.create(acted: @review, action: 'review:create')
+    end
     respond_with @post, @review, location: post_review_anchor(@post, @review)
   end
 
   def update
     @review = @post.reviews.find(params[:id])
-    @review.update!(review_params)
+    if @review.update!(review_params)
+      current_user.activities.create(acted: @review, action: 'review:update')
+    end
     respond_with @post, @review, location: post_review_anchor(@post, @review)
   end
 
