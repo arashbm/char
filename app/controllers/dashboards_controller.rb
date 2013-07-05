@@ -1,6 +1,10 @@
 class DashboardsController < ApplicationController
   before_action :authorize
   def show
-    @activities = Activity.order('created_at DESC').last(20)
+    if current_user.member_of_editorial?
+      @activities = Activity.order('created_at DESC').last(20)
+    else
+      @activities = current_user.activities.order('created_at DESC').last(20)
+    end
   end
 end

@@ -8,11 +8,16 @@ fa:
       first_person_suffix: ید
       third_person_suffix: ''
     post:
-      create_html: "%{actor_name} مطلب جدیدی با عنوان «%{post_title}» ایجاد کرد%{verb_suffix}."
-      update_html: "%{actor_name} مطلب «%{post_title}» را به روز کرد%{verb_suffix}. تغییرات را <a href='%{revision_path}'>مشاهده</a> کنید."
+      create_html: "مطلب جدیدی با عنوان «<a href='%{post_path}'>%{post_title}</a>» ایجاد کرد%{verb_suffix}."
+      update_html: "مطلب «<a href='%{post_path}'>%{post_title}</a>» را به روز کرد%{verb_suffix}. تغییرات را <a href='%{revision_path}'>مشاهده</a> کنید."
     review:
-      create_html: "%{actor_name} <a href='%{review_path}'>نقد جدیدی</a> بر مطلب «%{post_title}» نوشت%{verb_suffix}."
-      update_html: "%{actor_name} <a href='%{review_path}'>نقد خود</a> بر مطلب «%{post_title}» را به روز کرد%{verb_suffix}."
+      create_html: "<a href='%{review_path}'>نقد جدیدی</a> بر مطلب «<a href='%{post_path}'>%{post_title}</a>» نوشت%{verb_suffix}."
+      update_html: "<a href='%{review_path}'>نقد خود</a> بر مطلب «<a href='%{post_path}'>%{post_title}</a>» را به روز کرد%{verb_suffix}."
+    blueprint:
+      create_html: "برنامه‌ی جدید با نام «<a href='%{blueprint_path}'>%{blueprint_title}</a>» ایجاد کرد%{verb_suffix}."
+      update_html: "برنامه‌ی «<a href='%{blueprint_path}'>%{blueprint_title}</a>» را به روز کرد%{verb_suffix}."
+    discussion:
+      create_html: "نظر جدیدی درباره‌ی «<a href='%{discussable_path}'>%{discussable_title}</a>» نوشت%{verb_suffix}."
 
   helpers:
     errors:

@@ -13,8 +13,6 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true
 
-  # validates :name, presence: true
-
   def admin?
     # make it configurable!
     ['arashbm@gmail.com'].include? email

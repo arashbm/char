@@ -1,4 +1,4 @@
-<% action = activity.action.gsub ':','/' %>
 <li>
-  <%= render "activities/#{action}", activity: activity %>
+  <%= activity_actor_name(activity.actor, link: true) %>
+  <%= activity_translation activity %>
 </li>
