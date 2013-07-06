@@ -6,11 +6,11 @@
     </a>
   </h2>
   <div>
-    <div ng-repeat="discussion in discussions" class='discussion row'>
-        <div class='span1 offset1'>
-          <img src='{{ discussion.user.email | gravatarUrl }}' class="img-rounded"></img>
+    <div ng-repeat="discussion in discussions" class='discussion media'>
+        <div class='pull-right'>
+          <img src='{{ discussion.user.email | gravatarUrl }}' class="img-rounded media-object"></img>
         </div>
-        <div class='span10'>
+        <div class='media-body'>
           <div class='discussion-body'>
             <strong>{{discussion.user.name}}:</strong>
             <span ng-bind-html-unsafe="discussion.body | marked"></span>

@@ -1,6 +1,6 @@
 <div class="media activity activity-<%= activity.action.gsub ':', '-' %>">
   <div class='pull-right'>
-    <%= image_tag activity.actor.gravatar_url(default: 'identicon', size: 55), class: 'img-rounded' %>
+    <%= image_tag activity.actor.gravatar_url(default: 'identicon', size: 55), class: 'img-rounded media-object' %>
   </div>
   <div class='media-body'>
     <div>
