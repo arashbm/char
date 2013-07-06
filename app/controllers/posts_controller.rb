@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authorize
   def index
-    @posts = current_user.visible_posts
+    @posts = current_user.visible_posts.order('updated_at DESC')
     respond_with(@posts)
   end
 
@@ -45,6 +45,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :on_blog)
   end
 end
