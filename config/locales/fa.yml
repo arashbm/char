@@ -1,6 +1,7 @@
 fa:
   char: چارپایه
 
+
   activities:
     helpers:
       you: شما
@@ -31,6 +32,9 @@ fa:
   users:
     index:
       title: همه‌ی کاربران
+    edit:
+      changing_gravatar_title: می‌خواهید آواتارتان را تغییر دهید؟
+      changing_gravatar_html: برای این‌کار باید از طریق سایت <a href="http://en.gravatar.com/">گراواتار</a> یک آواتار به <strong>ایمیل‌تان</strong> نسبت دهید. بسیاری از سایت‌ها (مانند این سایت) به صورت خودکار از گراواتار شما استفاده می‌کنند.
 
   revisions:
     index:
@@ -78,6 +82,8 @@ fa:
         email: ایمیل
         password: رمز عبور
         password_confirmation: مجدداً رمز عبور
+        created_at: عضویت در سایت
+        last_activity: آخرین فعالیت
         role: عنوان
         roles:
           editorial: تحریریه
