@@ -22,13 +22,18 @@ class BlueprintsController < ApplicationController
   end
 
   def create
-    @blueprint = current_user.blueprints.create(blueprint_params)
+    @blueprint = current_user.blueprints.new(blueprint_params)
+    if @blueprint.save
+      current_user.activities.create(acted: @blueprint, action: 'blueprint:create')
+    end
     respond_with(@blueprint)
   end
 
   def update
     @blueprint = @editable_blueprints.find(params[:id])
-    @blueprint.update(blueprint_params)
+    if @blueprint.update(blueprint_params)
+      current_user.activities.create(acted: @blueprint, action: 'blueprint:update')
+    end
     respond_with(@blueprint)
   end
 

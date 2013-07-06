@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130324094037) do
+ActiveRecord::Schema.define(version: 20130705153742) do
+
+  create_table "activities", force: true do |t|
+    t.integer  "acted_id"
+    t.string   "acted_type"
+    t.string   "action"
+    t.integer  "actor_id"
+    t.text     "parameters"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "activities", ["acted_id"], name: "index_activities_on_acted_id", using: :btree
+  add_index "activities", ["actor_id"], name: "index_activities_on_actor_id", using: :btree
 
   create_table "blueprints", force: true do |t|
     t.string   "title"
@@ -39,6 +52,7 @@ ActiveRecord::Schema.define(version: 20130324094037) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "on_blog"
   end
 
   create_table "reviews", force: true do |t|
@@ -84,5 +98,19 @@ ActiveRecord::Schema.define(version: 20130324094037) do
   end
 
   add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id", using: :btree
+
+  create_table "work_items", force: true do |t|
+    t.string   "title"
+    t.string   "status"
+    t.datetime "due_date"
+    t.integer  "workable_id"
+    t.string   "workable_type"
+    t.integer  "assignee_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "work_items", ["assignee_id"], name: "index_work_items_on_assignee_id", using: :btree
+  add_index "work_items", ["workable_id"], name: "index_work_items_on_workable_id", using: :btree
 
 end

@@ -1,6 +1,25 @@
 fa:
   char: چارپایه
 
+
+  activities:
+    helpers:
+      you: شما
+      someone: کسی
+      first_person_suffix: ید
+      third_person_suffix: ''
+    post:
+      create_html: "مطلب جدیدی با عنوان «<a href='%{post_path}'>%{post_title}</a>» ایجاد کرد%{verb_suffix}."
+      update_html: "مطلب «<a href='%{post_path}'>%{post_title}</a>» را به روز کرد%{verb_suffix}. تغییرات را <a href='%{revision_path}'>مشاهده</a> کنید."
+    review:
+      create_html: "<a href='%{review_path}'>نقد جدیدی</a> بر مطلب «<a href='%{post_path}'>%{post_title}</a>» نوشت%{verb_suffix}."
+      update_html: "<a href='%{review_path}'>نقد خود</a> بر مطلب «<a href='%{post_path}'>%{post_title}</a>» را به روز کرد%{verb_suffix}."
+    blueprint:
+      create_html: "برنامه‌ی جدید با نام «<a href='%{blueprint_path}'>%{blueprint_title}</a>» ایجاد کرد%{verb_suffix}."
+      update_html: "برنامه‌ی «<a href='%{blueprint_path}'>%{blueprint_title}</a>» را به روز کرد%{verb_suffix}."
+    discussion:
+      create_html: "نظر جدیدی درباره‌ی «<a href='%{discussable_path}'>%{discussable_title}</a>» نوشت%{verb_suffix}."
+
   helpers:
     errors:
       more_than_one_review_per_post: برای هر مطلب یک نقد بیشتر نمی‌توانید بنویسید. همان نقد قبلی را ویرایش کنید. اگر می‌توانید برای بحث بیشتر از قابلیت بحث استفاده کنید.
@@ -13,6 +32,9 @@ fa:
   users:
     index:
       title: همه‌ی کاربران
+    edit:
+      changing_gravatar_title: می‌خواهید آواتارتان را تغییر دهید؟
+      changing_gravatar_html: برای این‌کار باید از طریق سایت <a href="http://en.gravatar.com/">گراواتار</a> یک آواتار به <strong>ایمیل‌تان</strong> نسبت دهید. بسیاری از سایت‌ها (مانند این سایت) به صورت خودکار از گراواتار شما استفاده می‌کنند.
 
   revisions:
     index:
@@ -60,6 +82,8 @@ fa:
         email: ایمیل
         password: رمز عبور
         password_confirmation: مجدداً رمز عبور
+        created_at: عضویت در سایت
+        last_activity: آخرین فعالیت
         role: عنوان
         roles:
           editorial: تحریریه

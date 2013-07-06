@@ -11,6 +11,8 @@ gem 'sass-rails',   '~> 4.0.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.0.3'
 
+gem "quiet_assets", "~> 1.0.2"
+
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
@@ -48,3 +50,5 @@ gem "paper_trail", github: 'airblade/paper_trail', branch: 'rails4'
 gem 'gon'
 
 gem 'rails_12factor'
+
+gem 'gravtastic'

@@ -75,6 +75,7 @@ GEM
     gon (4.1.1)
       actionpack (>= 2.3.0)
       json
+    gravtastic (3.2.6)
     hike (1.2.3)
     i18n (0.6.4)
     jbuilder (1.0.2)
@@ -95,6 +96,8 @@ GEM
     orm_adapter (0.4.0)
     pg (0.15.1)
     polyglot (0.3.3)
+    quiet_assets (1.0.2)
+      railties (>= 3.1, < 5.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -176,11 +179,13 @@ DEPENDENCIES
   differ (~> 0.1.2)
   foreman
   gon
+  gravtastic
   jbuilder (~> 1.0.1)
   jquery-rails
   jquery-turbolinks (~> 1.0.0)
   paper_trail!
   pg
+  quiet_assets (~> 1.0.2)
   rails (= 4.0.0)
   rails-i18n (~> 0.7.2)
   rails_12factor

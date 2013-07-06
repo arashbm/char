@@ -5,6 +5,9 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 ActiveSupport	/home/arashbm/char/test/test_helper.rb	/^class ActiveSupport::TestCase$/;"	c
+ActivitiesHelper	/home/arashbm/char/app/helpers/activities_helper.rb	/^module ActivitiesHelper$/;"	m
+Activity	/home/arashbm/char/app/models/activity.rb	/^class Activity < ActiveRecord::Base$/;"	c
+ActivityTest	/home/arashbm/char/test/models/activity_test.rb	/^class ActivityTest < ActiveSupport::TestCase$/;"	c
 AddClearanceToUsers	/home/arashbm/char/db/migrate/20130317214604_add_clearance_to_users.rb	/^class AddClearanceToUsers < ActiveRecord::Migration$/;"	c
 AddDeviseToUsers	/home/arashbm/char/db/migrate/20130324094037_add_devise_to_users.rb	/^class AddDeviseToUsers < ActiveRecord::Migration$/;"	c
 AddObjectChangesColumnToVersions	/home/arashbm/char/db/migrate/20130318091948_add_object_changes_column_to_versions.rb	/^class AddObjectChangesColumnToVersions < ActiveRecord::Migration$/;"	c
@@ -20,6 +23,7 @@ BlueprintsControllerTest	/home/arashbm/char/test/controllers/blueprints_controll
 BlueprintsHelper	/home/arashbm/char/app/helpers/blueprints_helper.rb	/^module BlueprintsHelper$/;"	m
 BlueprintsHelperTest	/home/arashbm/char/test/helpers/blueprints_helper_test.rb	/^class BlueprintsHelperTest < ActionView::TestCase$/;"	c
 Char	/home/arashbm/char/config/application.rb	/^module Char$/;"	m
+CreateActivities	/home/arashbm/char/db/migrate/20130701235158_create_activities.rb	/^class CreateActivities < ActiveRecord::Migration$/;"	c
 CreateBlueprints	/home/arashbm/char/db/migrate/20130322202204_create_blueprints.rb	/^class CreateBlueprints < ActiveRecord::Migration$/;"	c
 CreateDiscussions	/home/arashbm/char/db/migrate/20130322203717_create_discussions.rb	/^class CreateDiscussions < ActiveRecord::Migration$/;"	c
 CreatePosts	/home/arashbm/char/db/migrate/20130317202242_create_posts.rb	/^class CreatePosts < ActiveRecord::Migration$/;"	c
@@ -54,6 +58,7 @@ User	/home/arashbm/char/app/models/user.rb	/^class User < ActiveRecord::Base$/;"
 UserTest	/home/arashbm/char/test/models/user_test.rb	/^class UserTest < ActiveSupport::TestCase$/;"	c
 UsersController	/home/arashbm/char/app/controllers/users_controller.rb	/^class UsersController < ApplicationController$/;"	c
 UsersHelper	/home/arashbm/char/app/helpers/users_helper.rb	/^module UsersHelper$/;"	m
+activity_actor_name	/home/arashbm/char/app/helpers/activities_helper.rb	/^  def activity_actor_name(actor)$/;"	f	class:ActivitiesHelper
 admin?	/home/arashbm/char/app/models/user.rb	/^  def admin?$/;"	f	class:User
 authorize	/home/arashbm/char/app/controllers/application_controller.rb	/^  def authorize$/;"	f	class:ApplicationController
 blueprint_params	/home/arashbm/char/app/controllers/blueprints_controller.rb	/^  def blueprint_params$/;"	f	class:BlueprintsController
@@ -63,7 +68,9 @@ change	/home/arashbm/char/db/migrate/20130318004614_add_role_to_user.rb	/^  def 
 change	/home/arashbm/char/db/migrate/20130319103616_create_reviews.rb	/^  def change$/;"	f	class:CreateReviews
 change	/home/arashbm/char/db/migrate/20130322202204_create_blueprints.rb	/^  def change$/;"	f	class:CreateBlueprints
 change	/home/arashbm/char/db/migrate/20130322203717_create_discussions.rb	/^  def change$/;"	f	class:CreateDiscussions
+change	/home/arashbm/char/db/migrate/20130701235158_create_activities.rb	/^  def change$/;"	f	class:CreateActivities
 collectify_statuses	/home/arashbm/char/app/helpers/blueprints_helper.rb	/^  def collectify_statuses(list)$/;"	f	class:BlueprintsHelper
+configure_permitted_parameters	/home/arashbm/char/app/controllers/application_controller.rb	/^  def configure_permitted_parameters$/;"	f	class:ApplicationController
 create	/home/arashbm/char/app/controllers/blueprints_controller.rb	/^  def create$/;"	f	class:BlueprintsController
 create	/home/arashbm/char/app/controllers/discussions_controller.rb	/^  def create$/;"	f	class:DiscussionsController
 create	/home/arashbm/char/app/controllers/posts_controller.rb	/^  def create$/;"	f	class:PostsController
@@ -109,6 +116,7 @@ post_reviews_anchor	/home/arashbm/char/app/controllers/application_controller.rb
 previous_next_btn	/home/arashbm/char/app/helpers/revisions_helper.rb	/^  def previous_next_btn(rev)$/;"	f	class:RevisionsHelper
 review_params	/home/arashbm/char/app/controllers/reviews_controller.rb	/^  def review_params$/;"	f	class:ReviewsController
 role_label	/home/arashbm/char/app/helpers/users_helper.rb	/^  def role_label(user)$/;"	f	class:UsersHelper
+send_data_to_js	/home/arashbm/char/app/controllers/application_controller.rb	/^  def send_data_to_js$/;"	f	class:ApplicationController
 setup	/home/arashbm/char/test/models/review_test.rb	/^  def setup$/;"	f	class:ReviewTest
 setup	/home/arashbm/char/test/models/user_test.rb	/^  def setup$/;"	f	class:UserTest
 show	/home/arashbm/char/app/controllers/blueprints_controller.rb	/^  def show$/;"	f	class:BlueprintsController
@@ -118,6 +126,7 @@ show	/home/arashbm/char/app/controllers/posts_controller.rb	/^  def show$/;"	f	c
 show	/home/arashbm/char/app/controllers/revisions_controller.rb	/^  def show$/;"	f	class:RevisionsController
 show	/home/arashbm/char/app/controllers/users_controller.rb	/^  def show$/;"	f	class:UsersController
 show_diff	/home/arashbm/char/app/helpers/revisions_helper.rb	/^  def show_diff(a,b)$/;"	f	class:RevisionsHelper
+simulate_slow_connection	/home/arashbm/char/app/controllers/application_controller.rb	/^  def simulate_slow_connection$/;"	f	class:ApplicationController
 status_label	/home/arashbm/char/app/helpers/blueprints_helper.rb	/^  def status_label(s)$/;"	f	class:BlueprintsHelper
 status_label_classes	/home/arashbm/char/app/helpers/blueprints_helper.rb	/^  def status_label_classes(s)$/;"	f	class:BlueprintsHelper
 status_text	/home/arashbm/char/app/helpers/blueprints_helper.rb	/^  def status_text(text) $/;"	f	class:BlueprintsHelper
@@ -134,6 +143,7 @@ update	/home/arashbm/char/app/controllers/posts_controller.rb	/^  def update$/;"
 update	/home/arashbm/char/app/controllers/reviews_controller.rb	/^  def update$/;"	f	class:ReviewsController
 update	/home/arashbm/char/app/controllers/users_controller.rb	/^  def update$/;"	f	class:UsersController
 user_params	/home/arashbm/char/app/controllers/users_controller.rb	/^  def user_params$/;"	f	class:UsersController
+verb_suffix	/home/arashbm/char/app/helpers/activities_helper.rb	/^  def verb_suffix(actor)$/;"	f	class:ActivitiesHelper
 visible_blueprints	/home/arashbm/char/app/models/user.rb	/^  def visible_blueprints$/;"	f	class:User
 visible_posts	/home/arashbm/char/app/models/user.rb	/^  def visible_posts$/;"	f	class:User
 visible_users	/home/arashbm/char/app/models/user.rb	/^  def visible_users$/;"	f	class:User

@@ -7,13 +7,16 @@ class DiscussionsController < ApplicationController
 
   def index
     respond_to do |f|
-      f.json { render json: @discussions.to_json(include: { user: { only: [:name, :id] }})}
+      f.json { render json: @discussions.to_json(include: { user: { only: [:name, :id, :email] }})}
     end
   end
 
   def create
-    @discussion = @discussions.create(discussion_params) do |a|
+    @discussion = @discussions.new(discussion_params) do |a|
       a.user = current_user
+    end
+    if @discussion.save
+      current_user.activities.create(acted: @discussion, action: 'discussion:create')
     end
     respond_with @blueprint, @discussion
   end

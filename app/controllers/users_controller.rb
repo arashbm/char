@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user.visible_users.find(params[:id])
+    @latest_activities = @user.activities.order('created_at DESC').first(10)
     respond_with @user
   end
 

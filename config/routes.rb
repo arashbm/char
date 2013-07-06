@@ -1,6 +1,12 @@
 Char::Application.routes.draw do
 
-  root to: 'dashboards#show'
+  authenticated :user do
+      root to: "dashboards#show", as: "authenticated_root"
+  end
+
+  root to: "blog#index"
+
+  resources :blog
 
   devise_for :users
 

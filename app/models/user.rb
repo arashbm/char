@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+
+  include Gravtastic
+  is_gravtastic
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -9,9 +13,9 @@ class User < ActiveRecord::Base
   has_many :discussions
   has_many :blueprints, foreign_key: :creator_id
 
-  validates :name, presence: true
+  has_many :activities, foreign_key: :actor_id
 
-  # validates :name, presence: true
+  validates :name, presence: true
 
   def admin?
     # make it configurable!

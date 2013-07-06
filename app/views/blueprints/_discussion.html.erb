@@ -6,16 +6,19 @@
     </a>
   </h2>
   <div>
-    <div ng-repeat="discussion in discussions" class='row discussion'>
-      <div class='span1'>
-        <img src="http://placehold.it/64x64" class="img-rounded">
-      </div>
-      <div class='discussion-body'>
-        <strong>{{discussion.user.name}}:</strong>
-        <span ng-bind-html-unsafe="discussion.body | marked"></span>
-      </div>
-      <div class='discussion-footer'>
-        <time datetime='{{discussion.created_at}}'>{{discussion.created_at | timeAgo | persianNum }}</time>
+    <div ng-repeat="discussion in discussions" class='discussion media'>
+        <div class='pull-right'>
+          <img src='{{ discussion.user.email | gravatarUrl }}' class="img-rounded media-object"></img>
+        </div>
+        <div class='media-body'>
+          <div class='discussion-body'>
+            <strong>{{discussion.user.name}}:</strong>
+            <span ng-bind-html-unsafe="discussion.body | marked"></span>
+          </div>
+          <div class='discussion-footer'>
+            <i class='icon-time'></i> <time datetime='{{discussion.created_at}}'>{{discussion.created_at | timeAgo | persianNum }}</time>
+          </div>
+        </div>
       </div>
     </div> <%# ng-repeat %>
   </div>
