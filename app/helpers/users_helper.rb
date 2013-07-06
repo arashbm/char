@@ -1,6 +1,6 @@
 module UsersHelper
-  def last_activity(user)
-    if l = current_user.activities.order('created_ar DESC').last
+  def latest_activity(user)
+    if l = user.activities.order('created_at DESC').first
       time_ago_in_words(l.created_at)
     else
       t('helpers.never')
