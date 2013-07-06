@@ -23,6 +23,11 @@ fa:
   helpers:
     errors:
       more_than_one_review_per_post: برای هر مطلب یک نقد بیشتر نمی‌توانید بنویسید. همان نقد قبلی را ویرایش کنید. اگر می‌توانید برای بحث بیشتر از قابلیت بحث استفاده کنید.
+  blog:
+    index:
+      title: چارپایه | آنلاین
+    show:
+      discussions_html: بحث <span class='badge'>%{count}</span>
   posts:
     index:
       title: همه‌ی مطالب
@@ -56,6 +61,7 @@ fa:
     navbar:
       sign_in_html: <i class="icon-lock"></i> ورود
       sign_up_html: <i class="icon-book"></i> ثبت‌نام
+      blog_html: "چارپایه | آنلاین"
     user_navbar:
       dashboard_html: <i class='icon-dashboard'></i> پیش‌خوان
       sign_out_html: <i class='icon-off'></i> خروج
