@@ -1,0 +1,9 @@
+<%- model_class = Post -%>
+<div class="page-header">
+  <h1><%= t '.title' %></h1>
+</div>
+<%= content_tag_for :div, @posts, class: 'span6 offset3' do |post|  %>
+    <h2><%= link_to post.title, blog_path(post) %> <small><%= post.user.try(:name) %></small></h2>
+
+    <%= content_tag :div, post.body, data: { markdown: true } %>
+<% end %>
