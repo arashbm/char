@@ -75,6 +75,7 @@ GEM
     gon (4.1.1)
       actionpack (>= 2.3.0)
       json
+    gravtastic (3.2.6)
     hike (1.2.3)
     i18n (0.6.4)
     jbuilder (1.0.2)
@@ -178,6 +179,7 @@ DEPENDENCIES
   differ (~> 0.1.2)
   foreman
   gon
+  gravtastic
   jbuilder (~> 1.0.1)
   jquery-rails
   jquery-turbolinks (~> 1.0.0)

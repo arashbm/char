@@ -7,7 +7,7 @@ class DiscussionsController < ApplicationController
 
   def index
     respond_to do |f|
-      f.json { render json: @discussions.to_json(include: { user: { only: [:name, :id] }})}
+      f.json { render json: @discussions.to_json(include: { user: { only: [:name, :id, :email] }})}
     end
   end
 

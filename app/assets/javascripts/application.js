@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require gravtastic
 //= require wysiwym
 //= require moment
 //= require bootstrap

@@ -28,6 +28,9 @@ Char.filter 'persianNum', ->
 Char.filter 'marked', ->
   (input) -> $sanitize marked input
 
+Char.filter 'gravatarUrl', ->
+  (input) -> Gravtastic(input)
+
 Char.directive 'markdown', ->
   {
     restrict: 'A',
