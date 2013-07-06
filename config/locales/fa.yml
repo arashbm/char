@@ -21,6 +21,7 @@ fa:
       create_html: "نظر جدیدی درباره‌ی «<a href='%{discussable_path}'>%{discussable_title}</a>» نوشت%{verb_suffix}."
 
   helpers:
+    never: هیچ‌وقت
     errors:
       more_than_one_review_per_post: برای هر مطلب یک نقد بیشتر نمی‌توانید بنویسید. همان نقد قبلی را ویرایش کنید. اگر می‌توانید برای بحث بیشتر از قابلیت بحث استفاده کنید.
   blog:
