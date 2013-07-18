@@ -64,6 +64,17 @@ Char::Application.configure do
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
+  
+  # SMTP settings for mandrill
+  config.action_mailer.smtp_settings = {
+    address:              "smtp.mandrillapp.com",
+    port:                 25, # ports 587 and 2525 are also supported with STARTTLS
+    enable_starttls_auto: true, # detects and uses STARTTLS
+    user_name:            ENV["MANDRILL_USERNAME"],
+    password:             ENV["MANDRILL_APIKEY"], # SMTP password is any valid API key
+    authentication:       'login', # Mandrill supports 'plain' or 'login'
+    domain:               'charpaye.herokuapp.com', # your domain to identify your server when connecting
+  }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found).
@@ -78,5 +89,5 @@ Char::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.action_mailer.default_url_options = { :host => "charpaye.goorda.com" }
+  config.action_mailer.default_url_options = { :host => "charpaye.herokuapp.com" }
 end
