@@ -1,12 +1,26 @@
-<%= simple_form_for @post, :html => { :class => 'form-horizontal' } do |f| %>
+<%= simple_form_for @post, :html => { :class => 'form-horizontal', 'ng-controller' => 'EditorPrevCtrl' } do |f| %>
   <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :body, input_html: { class: 'input-block-level wysiwym', rows: 15 } %>
+    <%= f.input :title, input_html: {'ng-model' => 'post.title', 'ng-init' => "post.title = '#{@post.title}'"} %>
+
+    <%= f.input :body, input_html: { class: 'input-block-level wysiwym', rows: 15,
+      'ng-model' => 'post.body', 'ng-init' => "post.body = '#{@post.body}'"} %>
     <%= f.input :on_blog %>
   </div>
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 posts_path, :class => 'btn' %>
+  </div>
+  
+  <div>
+    <%= content_tag :span, '{{ post.body | wordCount }}' %>
+    <%= t '.words' %>
+  </div>
+
+  <div class='well preview'>
+    <%= content_tag :h1 do %>
+      {{post.title}} <small><%= @post.user.name %></small>
+    <% end %>
+    <%= content_tag :div, '', 'ng-bind-html-unsafe' => 'post.body | markdown' %>
   </div>
 <% end %>

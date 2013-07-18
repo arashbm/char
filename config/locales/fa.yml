@@ -30,6 +30,8 @@ fa:
     show:
       discussions_html: بحث <span class='badge'>%{count}</span>
   posts:
+    form:
+      words: کلمه
     index:
       title: همه‌ی مطالب
     show:
