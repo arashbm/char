@@ -25,11 +25,14 @@ Char.filter 'persianNum', ->
   (input) ->
     input.replace /\d/g, (n) -> {0:'۰',1:'۱',2:'۲',3:'۳',4:'۴',5:'۵',6:'۶',7:'۷',8:'۸',9:'۹'}[n]
 
-Char.filter 'marked', ->
-  (input) -> $sanitize marked input
+Char.filter 'markdown', ->
+  (input) -> $sanitize marked(input or " ")
 
 Char.filter 'gravatarUrl', ->
   (input) -> Gravtastic(input)
+
+Char.filter 'wordCount', ->
+  (input) -> (input or '').trim().replace(/\s+/gi, ' ').split(' ').length
 
 Char.directive 'markdown', ->
   {
