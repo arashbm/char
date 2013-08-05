@@ -1,3 +1,6 @@
+window.BlueprintEditorPrevCtrl = ($scope) ->
+  # some stuff
+
 window.BlueprintDiscussionsCtrl = ($scope, $http, $timeout, Discussion) ->
   queryvars =
     discussableType: 'blueprints'

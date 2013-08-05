@@ -1,0 +1,77 @@
+fa:
+
+  char: چارپایه
+
+  activities:
+    helpers:
+      you: شما
+      someone: کسی
+      first_person_suffix: ید
+      third_person_suffix: ''
+    post:
+      create_html: "مطلب جدیدی با عنوان «<a href='%{post_path}'>%{post_title}</a>» ایجاد کرد%{verb_suffix}."
+      update_html: "مطلب «<a href='%{post_path}'>%{post_title}</a>» را به روز کرد%{verb_suffix}. تغییرات را <a href='%{revision_path}'>مشاهده</a> کنید."
+    review:
+      create_html: "<a href='%{review_path}'>نقد جدیدی</a> بر مطلب «<a href='%{post_path}'>%{post_title}</a>» نوشت%{verb_suffix}."
+      update_html: "<a href='%{review_path}'>نقد خود</a> بر مطلب «<a href='%{post_path}'>%{post_title}</a>» را به روز کرد%{verb_suffix}."
+    blueprint:
+      create_html: "برنامه‌ی جدید با نام «<a href='%{blueprint_path}'>%{blueprint_title}</a>» ایجاد کرد%{verb_suffix}."
+      update_html: "برنامه‌ی «<a href='%{blueprint_path}'>%{blueprint_title}</a>» را به روز کرد%{verb_suffix}."
+    discussion:
+      create_html: "نظر جدیدی درباره‌ی «<a href='%{discussable_path}'>%{discussable_title}</a>» نوشت%{verb_suffix}."
+  blog:
+    index:
+      title: چارپایه | آنلاین
+    show:
+      discussions_html: بحث <span class='badge'>%{count}</span>
+  posts:
+    form:
+      words: کلمه
+    index:
+      title: همه‌ی مطالب
+    show:
+      reviews_html: نقد‌ها <span class='badge'>%{count}</span>
+      discussions_html: بحث <span class='badge'>%{count}</span>
+  users:
+    index:
+      title: همه‌ی کاربران
+    edit:
+      changing_gravatar_title: می‌خواهید آواتارتان را تغییر دهید؟
+      changing_gravatar_html: برای این‌کار باید از طریق سایت <a href="http://en.gravatar.com/">گراواتار</a> یک آواتار به <strong>ایمیل‌تان</strong> نسبت دهید. بسیاری از سایت‌ها (مانند این سایت) به صورت خودکار از گراواتار شما استفاده می‌کنند.
+
+  revisions:
+    index:
+      title_html: "تغییرات مطلب «%{title}»"
+    show:
+      title_html: "تغییرات مطلب «%{title}» <small>توسط %{terminator}</small>"
+      index: مشاهده‌ی همه‌ی تغییرات این مطلب
+      sentence: "%{terminator} در %{created_at} این مطلب را %{event} کرد."
+      unknown_terminator: 'کسی'
+      previous_html: <i class='icon-arrow-right'></i> قبلی
+      next_html: بعدی <i class='icon-arrow-left'></i>
+
+  blueprints:
+    index:
+      title: فهرست برنامه‌ها
+    discussion:
+      working: در حال ارسال
+  layouts:
+    navbar:
+      sign_in_html: <i class="icon-lock"></i> ورود
+      sign_up_html: <i class="icon-book"></i> ثبت‌نام
+      blog_html: "چارپایه | آنلاین"
+    user_navbar:
+      dashboard_html: <i class='icon-dashboard'></i> پیش‌خوان
+      sign_out_html: <i class='icon-off'></i> خروج
+      all_posts_html: <i class='icon-list'></i> همه‌ی مطالب
+      post_new_html:  <i class='icon-plus'></i> مطلب جدید 
+      users_html:  <i class='icon-group'></i> کاربران
+      profile_html:  <i class='icon-user'></i> نمایه
+      prefrences_html:  <i class='icon-cog'></i> تنظیمات
+      support_html:  <i class='icon-envelope'></i> پشتیبانی 
+      blueprints_html: <i class='icon-calendar'></i> برنامه‌ها
+      hello: سلام %{user}!
+  helpers:
+    never: هیچ‌وقت
+    errors:
+      more_than_one_review_per_post: برای هر مطلب یک نقد بیشتر نمی‌توانید بنویسید. همان نقد قبلی را ویرایش کنید. اگر می‌توانید برای بحث بیشتر از قابلیت بحث استفاده کنید.

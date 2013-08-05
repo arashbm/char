@@ -17,6 +17,7 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem 'foreman'
+  gem "letter_opener"
 end
 
 gem 'jquery-rails'
@@ -38,7 +39,7 @@ gem "responders", "~> 1.0.0.rc"
 
 gem "twitter-bootstrap-rails", "~> 2.2.6"
 
-gem "differ", "~> 0.1.2"
+gem "diffy"
 
 gem "airbrake", "~> 3.1.8"
 
