@@ -44,6 +44,7 @@ fa:
       title_html: "تغییرات مطلب «%{title}»"
     show:
       title_html: "تغییرات مطلب «%{title}» <small>توسط %{terminator}</small>"
+      index: مشاهده‌ی همه‌ی تغییرات این مطلب
       sentence: "%{terminator} در %{created_at} این مطلب را %{event} کرد."
       unknown_terminator: 'کسی'
       previous_html: <i class='icon-arrow-right'></i> قبلی

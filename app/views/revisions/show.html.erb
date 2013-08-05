@@ -3,10 +3,16 @@
 </div>
 <div class='alert alert-block alert-info'>
   <%= content_tag :p, t('.sentence', terminator: terminator_name(@revision),
-          event: event_name(@revision),
-          created_at: l(@revision.created_at, format: :short))%>
-  <%= previous_next_btn(@revision) %>
+    event: event_name(@revision),
+    created_at: l(@revision.created_at, format: :short))
+  %>
+  <p>
+    <%= link_to t('.index'), post_revisions_path(@revision.item_id) %>
+  </p>
+  <p>
+    <%= previous_next_btn(@revision) %>
+  </p>
 </div>
-<h2><%= diff(@revision, :title) %></h2>
+<h2><%= calc_diff(@revision, :title) %></h2>
 
-<%= content_tag :div, diff(@revision, :body), class: 'well' %>
+<%= content_tag :div, calc_diff(@revision, :body), class: 'well' %>
