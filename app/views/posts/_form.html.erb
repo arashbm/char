@@ -1,7 +1,8 @@
-<%= simple_form_for @post, :html => { :class => 'form-horizontal', 'ng-controller' => 'EditorPrevCtrl' } do |f| %>
+<%= simple_form_for @post, :html => { :class => 'form-horizontal', 'ng-controller' => 'PostEditorPrevCtrl' } do |f| %>
   <div class="form-inputs">
     <%= f.input :title, input_html: {'ng-model' => 'post.title', 'ng-init' => "post.title = '#{@post.title}'"} %>
 
+    <%= markdown_help %>
     <%= f.input :body, input_html: { class: 'input-block-level wysiwym', rows: 15,
       'ng-model' => 'post.body', 'ng-init' => "post.body = '#{@post.body}'"} %>
     <%= f.input :on_blog %>

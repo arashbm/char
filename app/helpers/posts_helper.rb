@@ -1,5 +1,15 @@
 # encoding: UTF-8
 module PostsHelper
+  def markdown_help
+    block = <<-EOF
+      <div class='alert alert-block alert-info'>
+        <h4>#{t 'helpers.markdown_help.title'}</h4>
+        #{t 'helpers.markdown_help.body_html'}
+      </div>
+    EOF
+    sanitize block
+  end
+
   def post_footer(post)
     lnks =[]
     lnks << link_to(t("helpers.links.edit_html"), edit_post_path(post)) if current_user.editable_posts.include? post
