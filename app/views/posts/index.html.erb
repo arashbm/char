@@ -10,7 +10,7 @@
   <%= content_tag_for :div, @posts do |post|  %>
     <h2><%= link_to post.title, post_path(post) %> <small><%= post.user.try(:name) %></small></h2>
 
-    <%= content_tag :div, post.body, data: { markdown: true } %>
+    <%= content_tag :div, truncate(post.body, length: 500, separator: "\n"), data: { markdown: true } %>
 
     <%= post_footer(post) %>
   <% end %>
