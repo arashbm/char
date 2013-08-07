@@ -28,6 +28,24 @@ Char.filter 'persianNum', ->
 Char.filter 'markdown', ->
   (input) -> $sanitize marked(input or " ")
 
+Char.filter 'grammer', ->
+  (input) ->
+    w = "[\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF]"
+    output = input
+    # space before punc
+    output = output.replace /(["'])/g, '<span class="err e-q">$1</span>'
+    bigParagraphPattern = ///
+    (\n{2}|^\n|^)
+    ((?:[^\n] | [^\n]\n[^\n]).{500,})
+    ((?= \n{2}|\n$|$))
+    ///mg
+    output = output.replace bigParagraphPattern,  '$1<span class="war b-p">$2</span>$3'
+    output = output.replace /(\s)([.,،;])/g, "$1<span class='err s-b-p'>$2</span>"
+    output = output.replace /(\s)([\)\]\}»])/g, "$1<span class='err s-b-c-p'>$2</span>"
+    output = output.replace /([«\[\(\{])(\s)/g, '<span class="err s-a-o-p">$1</span>$2'
+    output = output.replace /([0-9]+)/g, '<span class="err e-n">$1</span>'
+    output
+
 Char.filter 'gravatarUrl', ->
   (input) -> Gravtastic(input)
 
