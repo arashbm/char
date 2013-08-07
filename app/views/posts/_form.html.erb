@@ -22,6 +22,6 @@
     <%= content_tag :h1 do %>
       {{post.title}} <small><%= @post.user.name %></small>
     <% end %>
-    <%= content_tag :div, '', 'ng-bind-html-unsafe' => 'post.body | markdown' %>
+    <%= content_tag :div, '', 'ng-bind-html-unsafe' => 'post.body | grammer | markdown' %>
   </div>
 <% end %>
