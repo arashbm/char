@@ -1,10 +1,9 @@
 <%= simple_form_for @post, :html => { :class => 'form-horizontal', 'ng-controller' => 'PostEditorPrevCtrl' } do |f| %>
   <div class="form-inputs">
-    <%= f.input :title, input_html: {'ng-model' => 'post.title', 'ng-init' => "post.title = '#{@post.title}'"} %>
-
+    <%= f.input :title, input_html: {'ng-model' => 'post.title', 'ng-initial' => true } %>
     <%= markdown_help %>
     <%= f.input :body, input_html: { class: 'input-block-level wysiwym', rows: 15,
-      'ng-model' => 'post.body', 'ng-init' => "post.body = '#{@post.body}'"} %>
+      'ng-model' => 'post.body', 'ng-initial' => true } %>
     <%= f.input :on_blog %>
   </div>
   <div class="form-actions">
