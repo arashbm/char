@@ -28,22 +28,53 @@ Char.filter 'persianNum', ->
 Char.filter 'markdown', ->
   (input) -> $sanitize marked(input or " ")
 
+all_matches = (str, regexp) ->
+  results = []
+  results.push arr while (arr = regexp.exec(str))
+  results
+
 Char.filter 'grammer', ->
-  (input) ->
-    w = "[\u0600-\u06FF\u0750-\u077F\uFB50-\uFDFF\uFE70-\uFEFF]"
+  (input = '') ->
+
+    errors = [
+      # english quotation mark
+      /(.?)(["'])(.?)/g,
+      # space before punctuation
+      /(\s)([.,،;!?])(.?)/g,
+      # no space after punctuation
+      /(.?)([\.,،;!?])([^\s])/g,
+      # two or more punctuations in a row
+      /(.?)([\.,،;!?]{2,})(.?)/g,
+      # space before closing pran
+      /(\s)([\)\]\}»])(.?)/g,
+      # no space after closing pran
+      /(.?)([\)\]\}»])([\u0600-\u06FF\w])/g,
+      # space after opening pran
+      /(.?)([«\[\(\{])(\s)/g,
+      # no space before opening pran
+      /(.?)([\u0600-\u06FF\w])([«\[\(\{])/g,
+      #english numbers
+      /(.?)([0-9]+)(.?)/g,
+    ]
+
+    warnings = [
+      # Big paragraphs
+      ///
+      (\n{2}|^\n|^)
+      ((?:[^\n] | [^\n]\n[^\n]).{500,})
+      ((?= \n{2}|\n$|$))
+      ///mg,
+    ]
+
     output = input
-    # space before punc
-    output = output.replace /(["'])/g, '<span class="err e-q">$1</span>'
-    bigParagraphPattern = ///
-    (\n{2}|^\n|^)
-    ((?:[^\n] | [^\n]\n[^\n]).{500,})
-    ((?= \n{2}|\n$|$))
-    ///mg
-    output = output.replace bigParagraphPattern,  '$1<span class="war b-p">$2</span>$3'
-    output = output.replace /(\s)([.,،;])/g, "$1<span class='err s-b-p'>$2</span>"
-    output = output.replace /(\s)([\)\]\}»])/g, "$1<span class='err s-b-c-p'>$2</span>"
-    output = output.replace /([«\[\(\{])(\s)/g, '<span class="err s-a-o-p">$1</span>$2'
-    output = output.replace /([0-9]+)/g, '<span class="err e-n">$1</span>'
+    for error in errors
+      for match in all_matches(input, error)
+        output = output.replace(match[0], "#{match[1]}<span class='err'>#{match[2]}</span>#{match[3]}")
+
+    for warning in warnings
+      for match in all_matches(input, warning)
+        output = output.replace(match[0], "#{match[1]}<span class='war'>#{match[2]}</span>#{match[3]}")
+
     output
 
 Char.filter 'gravatarUrl', ->
@@ -59,3 +90,12 @@ Char.directive 'markdown', ->
       htmlText = $sanitize marked element.text()
       element.html htmlText
   }
+
+Char.directive 'ngInitial', ->
+  restrict: 'A'
+  controller: ['$scope', '$element', '$attrs', '$parse', ($scope, $element, $attrs, $parse) ->
+    val = $attrs.value || $element.html()
+    getter = $parse($attrs.ngModel)
+    setter = getter.assign
+    setter($scope, val)
+  ]
