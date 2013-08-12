@@ -30,31 +30,42 @@ Char.filter 'markdown', ->
 
 all_matches = (str, regexp) ->
   results = []
-  results.push arr while (arr = regexp.exec(str))
+  count = 0
+  while (arr = regexp.exec(str)) and count < 20
+    results.push arr
+    count += 1
   results
 
 Char.filter 'grammer', ->
   (input = '') ->
 
     errors = [
-      # english quotation mark
-      /(.?)(["'])(.?)/g,
+      # english quotation and persent mark
+      /(.?)(["'%?])(.?)/g,
+      # arabik kaf and ya and hamza
+      /(.?)([\u064a\u0643\u06c0])(.?)/g,
       # space before punctuation
-      /(\s)([.,،;!?])(.?)/g,
+      /(\s)([.,،;!?؟])(.?)/g,
       # no space after punctuation
-      /(.?)([\.,،;!?])([^\s])/g,
+      /(.?)([\.,،;!?؟])([^\s])/g,
       # two or more punctuations in a row
-      /(.?)([\.,،;!?]{2,})(.?)/g,
+      /(.?)([\.,،;!?؟]{2,})(.?)/g,
       # space before closing pran
       /(\s)([\)\]\}»])(.?)/g,
       # no space after closing pran
-      /(.?)([\)\]\}»])([\u0600-\u06FF\w])/g,
+      /(.?)([\)\]\}»])([\u0600-\u06FF])/g,
       # space after opening pran
       /(.?)([«\[\(\{])(\s)/g,
       # no space before opening pran
       /(.?)([\u0600-\u06FF\w])([«\[\(\{])/g,
       #english numbers
       /(.?)([0-9]+)(.?)/g,
+      # full space before تر ترین
+      /([\u0600-\u06FF\w]+)([\s]+)(\u062a\u0631\s|\u062a\u0631\u06cc\u0646\s|\u062a\u0631\u06cc\s|\u062a\u0631\u06cc\u0646\u06cc\s)/g,
+      # full space before ها های
+      /([\u0600-\u06FF\w]+)([\s]+)(\u0647\u0627\s|\u0647\u0627\u06cc\s)/g,
+      # full space before ی
+      /([\u0600-\u06FF\w]+)([\s]+)(\u06cc\s)/g,
     ]
 
     warnings = [
