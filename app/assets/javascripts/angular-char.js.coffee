@@ -66,14 +66,16 @@ Char.filter 'grammer', ->
       ///mg,
     ]
 
+
     output = input
-    for error in errors
-      for match in all_matches(input, error)
-        output = output.replace(match[0], "#{match[1]}<span class='err'>#{match[2]}</span>#{match[3]}")
 
     for warning in warnings
       for match in all_matches(input, warning)
         output = output.replace(match[0], "#{match[1]}<span class='war'>#{match[2]}</span>#{match[3]}")
+
+    for error in errors
+      for match in all_matches(input, error)
+        output = output.replace(match[0], "#{match[1]}<span class='err'>#{match[2]}</span>#{match[3]}")
 
     output
 
