@@ -72,6 +72,7 @@ activity_translation	/home/arashbm/char/app/helpers/activities_helper.rb	/^  def
 admin?	/home/arashbm/char/app/models/user.rb	/^  def admin?$/;"	f	class:User
 authorize	/home/arashbm/char/app/controllers/application_controller.rb	/^  def authorize$/;"	f	class:ApplicationController
 blueprint_params	/home/arashbm/char/app/controllers/blueprints_controller.rb	/^  def blueprint_params$/;"	f	class:BlueprintsController
+calc_diff	/home/arashbm/char/app/helpers/revisions_helper.rb	/^  def calc_diff(rev, attribute)$/;"	f
 change	/home/arashbm/char/db/migrate/20130317202047_create_users.rb	/^  def change$/;"	f	class:CreateUsers
 change	/home/arashbm/char/db/migrate/20130317202242_create_posts.rb	/^  def change$/;"	f	class:CreatePosts
 change	/home/arashbm/char/db/migrate/20130318004614_add_role_to_user.rb	/^  def change$/;"	f	class:AddRoleToUser
@@ -90,7 +91,6 @@ current_user	/home/arashbm/char/app/mailers/event_digest.rb	/^    def current_us
 daily	/home/arashbm/char/app/mailers/event_digest.rb	/^  def daily(user_id, activity_ids)$/;"	f	class:EventDigest
 destroy	/home/arashbm/char/app/controllers/blueprints_controller.rb	/^  def destroy$/;"	f	class:BlueprintsController
 destroy	/home/arashbm/char/app/controllers/posts_controller.rb	/^  def destroy$/;"	f	class:PostsController
-diff	/home/arashbm/char/app/helpers/revisions_helper.rb	/^  def diff(rev, attribute)$/;"	f
 discussion_params	/home/arashbm/char/app/controllers/discussions_controller.rb	/^  def discussion_params$/;"	f	class:DiscussionsController
 down	/home/arashbm/char/db/migrate/20130317214604_add_clearance_to_users.rb	/^  def self.down$/;"	F	class:AddClearanceToUsers
 down	/home/arashbm/char/db/migrate/20130318091947_create_versions.rb	/^  def self.down$/;"	F	class:CreateVersions
@@ -118,6 +118,7 @@ index	/home/arashbm/char/app/controllers/reviews_controller.rb	/^  def index$/;"
 index	/home/arashbm/char/app/controllers/revisions_controller.rb	/^  def index$/;"	f	class:RevisionsController
 index	/home/arashbm/char/app/controllers/users_controller.rb	/^  def index$/;"	f	class:UsersController
 latest_activity	/home/arashbm/char/app/helpers/users_helper.rb	/^  def latest_activity(user)$/;"	f	class:UsersHelper
+markdown_help	/home/arashbm/char/app/helpers/posts_helper.rb	/^  def markdown_help$/;"	f	class:PostsHelper
 member_of_editorial?	/home/arashbm/char/app/models/user.rb	/^  def member_of_editorial?$/;"	f	class:User
 navigation_behavior	/home/arashbm/char/lib/application_responder.rb	/^  def navigation_behavior(error)$/;"	f	class:NestedResponder
 new	/home/arashbm/char/app/controllers/blueprints_controller.rb	/^  def new$/;"	f	class:BlueprintsController

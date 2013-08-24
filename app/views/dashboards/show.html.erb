@@ -6,11 +6,11 @@
 
 <div class='span4'>
   <div class='thumbnail'>
-    <%= image_tag current_user.gravatar_url(default: 'identicon', size: 370), class: 'img-rounded' %>
+    <%= gravatar user: current_user, size: 370 %>
     <div class='caption'>
       <h3><%= current_user.name %> <%= role_label(current_user)%></h3>
 
-      <%= link_to t('helpers.links.edit_html'), edit_user_path(current_user)  %>
+      <%= link_to t('helpers.links.edit_html'), edit_user_path(current_user) %>
 
       <ul class='unstyled'>
         <li><%= User.human_attribute_name(:created_at) %>: <%= time_ago_in_words(current_user.created_at) %></li>
