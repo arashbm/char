@@ -73,7 +73,7 @@ Char::Application.configure do
     user_name:            ENV["MANDRILL_USERNAME"],
     password:             ENV["MANDRILL_APIKEY"], # SMTP password is any valid API key
     authentication:       'login', # Mandrill supports 'plain' or 'login'
-    domain:               'charpaye.herokuapp.com', # your domain to identify your server when connecting
+    domain:               'www.charpaye-online.com', # your domain to identify your server when connecting
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
@@ -89,5 +89,5 @@ Char::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.action_mailer.default_url_options = { :host => "charpaye.herokuapp.com" }
+  config.action_mailer.default_url_options = { :host => "www.charpaye-online.com" }
 end
