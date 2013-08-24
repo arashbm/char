@@ -6,35 +6,35 @@ module ActivitiesHelper
                  when 'post:create'
                    {
                      post_title: activity.acted.title,
-                     post_path: post_path(activity.acted),
+                     post_path: post_url(activity.acted),
                    }
                  when 'post:update'
                    {
                      post_title: activity.acted.title,
-                     post_path: post_path(activity.acted),
-                     revision_path: post_revision_path(activity.acted, activity.parameters[:revision_id])
+                     post_path: post_url(activity.acted),
+                     revision_path: post_revision_url(activity.acted, activity.parameters[:revision_id])
                    }
                  when 'review:create'
                    {
                      post_title: activity.acted.post.title,
-                     post_path: post_path(activity.acted.post),
+                     post_path: post_url(activity.acted.post),
                      review_path: post_review_anchor(activity.acted.post, activity.acted)
                    }
                  when 'review:update'
                    {
                      post_title: activity.acted.post.title,
-                     post_path: post_path(activity.acted.post),
+                     post_path: post_url(activity.acted.post),
                      review_path: post_review_anchor(activity.acted.post, activity.acted)
                    }
                  when 'blueprint:create'
                    {
                      blueprint_title: activity.acted.title,
-                     blueprint_path: blueprint_path(activity.acted)
+                     blueprint_path: blueprint_url(activity.acted)
                    }
                  when 'blueprint:update'
                    {
                      blueprint_title: activity.acted.title,
-                     blueprint_path: blueprint_path(activity.acted)
+                     blueprint_path: blueprint_url(activity.acted)
                    }
                  when 'discussion:create'
                    {

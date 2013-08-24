@@ -1,4 +1,7 @@
 fa:
+  date:
+    formats:
+      superlong: ! "%A، %e %B %Y"
   activerecord:
     models:
       user: کاربر
