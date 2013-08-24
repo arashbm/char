@@ -2,6 +2,8 @@ fa:
   date:
     formats:
       superlong: ! "%A، %e %B %Y"
+  helpers:
+    gravatar_alt: "آواتار %{name}"
   activerecord:
     models:
       user: کاربر
