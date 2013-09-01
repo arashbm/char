@@ -3,6 +3,7 @@ class Blueprint < ActiveRecord::Base
 
   has_many :activities, as: :acted
   has_many :assignments
+  has_many :assignees, through: :assignments
   has_many :discussions
 
   validates :status, presence: true
