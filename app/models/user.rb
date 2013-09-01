@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :discussions
   has_many :blueprints, foreign_key: :creator_id
-
+  has_many :blueprints, foreign_key: :assignee_id
   has_many :activities, foreign_key: :actor_id
 
   validates :name, presence: true

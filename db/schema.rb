@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130705153742) do
+ActiveRecord::Schema.define(version: 20130901204101) do
 
   create_table "activities", force: true do |t|
     t.integer  "acted_id"
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 20130705153742) do
 
   add_index "activities", ["acted_id"], name: "index_activities_on_acted_id", using: :btree
   add_index "activities", ["actor_id"], name: "index_activities_on_actor_id", using: :btree
+
+  create_table "assignments", force: true do |t|
+    t.integer  "assignee_id"
+    t.integer  "blueprint_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "assignments", ["assignee_id"], name: "index_assignments_on_assignee_id", using: :btree
+  add_index "assignments", ["blueprint_id"], name: "index_assignments_on_blueprint_id", using: :btree
 
   create_table "blueprints", force: true do |t|
     t.string   "title"
