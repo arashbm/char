@@ -1,10 +1,15 @@
-<%= simple_form_for @blueprint, :html => { :class => 'form-horizontal', 'ng-controller' => 'BlueprintEditorPrevCtrl' } do |f| %>
-  <div class='form-inputs'>
-    <%= f.input :title, input_html: {'ng-model' => 'blueprint.title', 'ng-init' => "blueprint.title = '#{@blueprint.title}'"}%>
-    <%= f.input :status, collection: collectify_statuses(Rails.configuration.blueprint_status) %>
-    <%= markdown_help %>
-    <%= f.input :description, input_html: { class: 'input-block-level wysiwym', rows: 15,
-      'ng-model' => 'blueprint.description', 'ng-init' => "blueprint.description = '#{@blueprint.description}'" } %>
+<%= simple_form_for @blueprint, :html => { :class => 'form-vertical', 'ng-controller' => 'BlueprintEditorPrevCtrl' } do |f| %>
+  <div class="row">
+    <div class='form-inputs span9'>
+      <%= f.input :title, input_html: {'ng-model' => 'blueprint.title', 'ng-initial' => @blueprint.title }%>
+      <%= f.input :status, collection: collectify_statuses(Rails.configuration.blueprint_status) %>
+      <%= markdown_help %>
+      <%= f.input :description, input_html: { class: 'input-block-level wysiwym', rows: 8,
+        'ng-model' => 'blueprint.description', 'ng-initial' => @blueprint.description } %>
+      </div>
+      <div class="form-inputs span3">
+        <%= f.association :assignees, as: :check_boxes, collection: User.editorial %>
+      </div>
     </div>
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>

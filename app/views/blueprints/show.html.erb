@@ -3,7 +3,29 @@
   <h1><%= Blueprint.model_name.human %>: <%= @blueprint.title %> <%= status_label(@blueprint.status) %> <small><%= @blueprint.creator.name  %></small></h1>
 </div>
 
-  <div markdown><%= @blueprint.description %></div>
+<div class="row">
+  <div class="span9">
+    <div markdown><%= @blueprint.description %></div>
+    <%= link_to t("helpers.links.edit_html"),
+      edit_blueprint_path(@blueprint), :class => 'btn btn-mini' %>
+  </div>
+  <div class="span3">
+    <h3><%= Blueprint.human_attribute_name :assignees %></h3>
+    <% if @blueprint.assignees.count > 0 %>
+      <ul class="unstyled">
+        <%= content_tag_for :li, @blueprint.assignees do |a| %>
+          <%= a.name %>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>
+        <em><%= t '.no_assignees' %></em>
+      </p>
+    <% end %>
+    <%= link_to t("helpers.links.edit_html"),
+      edit_blueprint_path(@blueprint), :class => 'btn btn-mini' %>
+  </div>
+</div>
 
 <div class="form-actions">
   <%= link_to t("helpers.links.edit_html"),

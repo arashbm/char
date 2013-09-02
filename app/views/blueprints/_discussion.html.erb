@@ -1,40 +1,45 @@
-<div ng-controller = 'BlueprintDiscussionsCtrl'>
-  <h2>
-    <%= t '.discussions', count: '5' %>
-    <a id="reloadBtn" ng-click='reload()' class='btn {{btnClass()}}' >
-      <i class='{{ btnIconClass() }}'></i>
-    </a>
-  </h2>
-  <div>
-    <div ng-repeat="discussion in discussions" class='discussion media'>
+<div class="row">
+  <div ng-controller = 'BlueprintDiscussionsCtrl' class="span6 offset3">
+    <h2>
+      <%= t '.discussions' %>
+      <a id="reloadBtn" ng-click='reload()' class='btn btn-mini' >
+        <i class='icon-refresh'></i>
+      </a>
+    </h2>
+    <div>
+      <div ng-repeat="discussion in discussions" class='discussion media'>
         <div class='pull-right'>
-          <img src='{{ discussion.user.email | gravatarUrl }}' class="img-rounded media-object"></img>
+          <img ng-src='{{ discussion.user.email | gravatarUrl }}' class="img-rounded media-object"></img>
         </div>
         <div class='media-body'>
           <div class='discussion-body'>
             <strong>{{discussion.user.name}}:</strong>
-            <span ng-bind-html-unsafe="discussion.body | marked"></span>
+            <span ng-bind-html-unsafe="discussion.body | markdown"></span>
           </div>
           <div class='discussion-footer'>
             <i class='icon-time'></i> <time datetime='{{discussion.created_at}}'>{{discussion.created_at | timeAgo | persianNum }}</time>
           </div>
         </div>
-      </div>
-    </div> <%# ng-repeat %>
-  </div>
+      </div> <%# ng-repeat %>
+    </div>
 
-  <div>
-    <form id='newDiscussionForm'>
-      <fieldset>
-        <legend><%= t '.your_comment' %></legend>
-        <div class='control-group {{fieldClass("body")}}'>
-          <textarea rows=5 ng-model='discussionForm.body' class='input-block-level'></textarea>
-          <span class="help-inline" ng-show='discussionFormErrors.body[0]'>
-            {{discussionFormErrors.body[0]}}
-          </span>
-        </div>
-        <button class="btn" id='discussionFormSubmit' ng-click='createDiscussion()'><i class={{formIconClass()}}></i> <%= t '.send_your_comment' %></button>
-      </fieldset>
-    </form>
+    <div>
+      <form id='newDiscussionForm' ng-submit="createDiscussion()">
+        <fieldset>
+          <legend><%= t '.your_comment' %></legend>
+          <div class='control-group media'>
+            <div class='pull-right'>
+              <img ng-src='{{ $window.gon.current_user.email | gravatarUrl }}' class="img-rounded media-object"></img>
+            </div>
+            <div class='media-body'>
+              <div class='discussion-body'>
+                <textarea rows=2 ng-model='discussionForm.body' class='input-block-level'></textarea>
+              </div>
+            </div>
+          </div>
+          <input type="submit" class="btn" value="<%= t '.send_your_comment' %>" />
+        </fieldset>
+      </form>
+    </div>
   </div>
 </div>

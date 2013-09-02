@@ -22,6 +22,8 @@ class User < ActiveRecord::Base
     # make it configurable!
     ['arashbm@gmail.com'].include? email
   end
+
+  scope :editorial, -> { where role: 'editorial' }
   
   def member_of_editorial?
     role == 'editorial'

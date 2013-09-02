@@ -55,6 +55,7 @@ fa:
       title: فهرست برنامه‌ها
     discussion:
       working: در حال ارسال
+      send_your_comment: ارسال نظر 
   layouts:
     navbar:
       sign_in_html: <i class="icon-lock"></i> ورود
