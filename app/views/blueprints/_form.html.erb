@@ -9,6 +9,7 @@
       </div>
       <div class="form-inputs span3">
         <%= f.association :assignees, as: :check_boxes, collection: User.editorial %>
+        <%= f.input :due_date, as: :date %>
       </div>
     </div>
   <div class="form-actions">

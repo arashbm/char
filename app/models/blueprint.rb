@@ -8,4 +8,9 @@ class Blueprint < ActiveRecord::Base
 
   validates :status, presence: true
   validates :title, presence: true
+
+  scope :unassigned, -> do
+    joins(:assignments).select('blueprints.id').
+      group('blueprints.id').having('count(assignmets.id) == 0')
+  end
 end

@@ -1,0 +1,25 @@
+<div class="media blueprint">
+  <div class='media-body'>
+    <div>
+      <%= blueprint.title %>
+      <div class="pull-left">
+        <%= status_label(blueprint.status) %>
+        <%= link_to t('helpers.links.edit_icon_html'), edit_blueprint_path(blueprint) %>
+      </div>
+    </div>
+    <div>
+      <% if blueprint.assignees.count > 0 %>
+        <i class='icon-user'></i>
+        <%= blueprint.assignees.pluck(:name).join ', ' %>
+      <% else %>
+        <i class='icon-user'></i> <%= t '.not_assigned' %>
+      <% end %>
+
+      <% if blueprint.due_date %>
+        | <i class='icon-time'></i> <%= time_ago_in_words(blueprint.due_date) %>
+      <% else %>
+        | <i class='icon-time'></i> <%= t '.no_due_date' %>
+      <% end %>
+    </div>
+  </div>
+</div>

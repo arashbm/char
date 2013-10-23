@@ -6,5 +6,7 @@ class DashboardsController < ApplicationController
     else
       @activities = current_user.activities.order('created_at DESC').last(20)
     end
+    @blueprints = current_user.assigned_blueprints.order('due_date DESC').last(20)
+    @unassigned_blueprints = Blueprint.unassigned.last(20)
   end
 end

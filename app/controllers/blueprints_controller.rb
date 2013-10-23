@@ -46,7 +46,7 @@ class BlueprintsController < ApplicationController
   private
 
   def blueprint_params
-    params.require(:blueprint).permit(:title, :description, :status, assignee_ids: [])
+    params.require(:blueprint).permit(:title, :description, :status, :due_date, assignee_ids: [])
   end
 
   def get_blueprints
